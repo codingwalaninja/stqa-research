@@ -43,8 +43,8 @@ This project introduces a **Hybrid AI Framework** that fuses **Static Code Struc
 ## 📁 Dataset (50 Multi-Domain Software Modules)
 
 The complete benchmark dataset of **50 real-world software modules** across 4 enterprise domains (E-Commerce, Healthcare EHR, FinTech, and Social Media) is freely accessible and downloadable:
-- 📊 **CSV Format (for Python/Pandas/R/Excel):** [`dataset.csv`](dataset.csv)
-- 🗂️ **JSON Format (structured records):** [`dataset.json`](dataset.json)
+- 📊 **Excel Dataset (.xlsx):** [`dataset.xlsx`](dataset.xlsx) *(Easy spreadsheet viewing & analysis)*
+- 🗂️ **JSON Dataset (.json):** [`dataset.json`](dataset.json) *(Structured records with 19 metrics & ground truth)*
 - 🔬 **Live Web Explorer:** Open `index.html#dataset` or visit [http://localhost:8080/#dataset](http://localhost:8080/#dataset)
 
 ---

@@ -1,176 +1,175 @@
-<svg width="1100" height="720" viewBox="0 0 1100 720" xmlns="http://www.w3.org/2000/svg" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<svg width="1120" height="720" viewBox="0 0 1120 720" xmlns="http://www.w3.org/2000/svg" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <defs>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
       <path d="M 0 1 L 7 4 L 0 7 z" fill="#475569" />
     </marker>
-    <filter id="subtleShadow" x="-2%" y="-2%" width="104%" height="106%" filterUnits="userSpaceOnUse">
+    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="106%" filterUnits="userSpaceOnUse">
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.06" />
     </filter>
   </defs>
 
-  <!-- TITLE BLOCK -->
-  <rect x="0" y="0" width="1100" height="65" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
-  <text x="50" y="38" font-size="20" font-weight="700" fill="#0f172a">HybridQA: System Architecture &amp; Data Pipeline</text>
-  <text x="50" y="55" font-size="12" fill="#64748b">Unified Quality Prediction Framework via Static Analysis, Dynamic Telemetry, and Interaction Modeling</text>
-  <line x1="0" y1="65" x2="1100" y2="65" stroke="#cbd5e1" stroke-width="1" />
+  <!-- TITLE BAR -->
+  <rect x="0" y="0" width="1120" height="65" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+  <text x="40" y="38" font-size="20" font-weight="700" fill="#0f172a">HybridQA: System Architecture &amp; Dataflow Pipeline</text>
+  <text x="40" y="55" font-size="12" fill="#64748b">Dual-Pipeline Software Quality Prediction Engine (Neural Network + Gradient Boosting + Interaction Core)</text>
+  <line x1="0" y1="65" x2="1120" y2="65" stroke="#cbd5e1" stroke-width="1" />
 
-  <!-- ========================================== -->
-  <!-- BOX 1: INPUT TELEMETRY (Left Column) -->
-  <!-- ========================================== -->
-  <g filter="url(#subtleShadow)">
-    <rect x="50" y="90" width="280" height="580" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
-    <rect x="50" y="90" width="280" height="34" rx="6" fill="#f1f5f9" />
-    <rect x="50" y="118" width="280" height="6" fill="#f1f5f9" />
-    <line x1="50" y1="124" x2="330" y2="124" stroke="#cbd5e1" stroke-width="1" />
-    <text x="65" y="113" font-size="13" font-weight="700" fill="#1e293b">1. Input Telemetry (19 Metrics)</text>
+  <!-- 1. INPUT TELEMETRY -->
+  <g filter="url(#cardShadow)">
+    <rect x="40" y="90" width="280" height="585" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
+    <rect x="40" y="90" width="280" height="34" rx="6" fill="#f1f5f9" />
+    <rect x="40" y="118" width="280" height="6" fill="#f1f5f9" />
+    <line x1="40" y1="124" x2="320" y2="124" stroke="#cbd5e1" stroke-width="1" />
+    <text x="55" y="113" font-size="13" font-weight="700" fill="#1e293b">1. Input Telemetry (19 Metrics)</text>
 
-    <!-- Static Sub-box -->
-    <rect x="65" y="140" width="250" height="235" rx="4" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1" />
-    <text x="75" y="162" font-size="12" font-weight="700" fill="#6b21a8">Static Code Metrics (10)</text>
-    <text x="75" y="178" font-size="10" fill="#7e22ce">Extracted via SonarQube / ESLint</text>
-    <line x1="75" y1="186" x2="305" y2="186" stroke="#e9d5ff" stroke-width="1" />
-    
-    <text x="80" y="206" font-size="11" fill="#334155">• Lines of Code (LOC)</text>
-    <text x="80" y="224" font-size="11" fill="#334155">• Cyclomatic Complexity (CC)</text>
-    <text x="80" y="242" font-size="11" fill="#334155">• Halstead Volume (HV)</text>
-    <text x="80" y="260" font-size="11" fill="#334155">• Maintainability Index (MI)</text>
-    <text x="80" y="278" font-size="11" fill="#334155">• Code Duplication % (DUP)</text>
-    <text x="80" y="296" font-size="11" fill="#334155">• Coupling Between Objects (CBO)</text>
-    <text x="80" y="314" font-size="11" fill="#334155">• Depth of Inheritance (DIT)</text>
-    <text x="80" y="332" font-size="11" fill="#334155">• Number of Methods (NOM)</text>
-    <text x="80" y="350" font-size="11" fill="#334155">• Comment Ratio % (CR)</text>
-    <text x="80" y="368" font-size="11" fill="#334155">• Code Smells Count (CS)</text>
+    <!-- Static Metrics -->
+    <rect x="55" y="140" width="250" height="235" rx="4" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1" />
+    <text x="65" y="162" font-size="12" font-weight="700" fill="#6b21a8">Static Code Metrics (10)</text>
+    <text x="65" y="178" font-size="10" fill="#7e22ce">Analyzers: SonarQube / ESLint / Radon</text>
+    <line x1="65" y1="186" x2="295" y2="186" stroke="#e9d5ff" stroke-width="1" />
+    <text x="70" y="206" font-size="11" fill="#334155">&#8226; Lines of Code (LOC)</text>
+    <text x="70" y="224" font-size="11" fill="#334155">&#8226; Cyclomatic Complexity (CC)</text>
+    <text x="70" y="242" font-size="11" fill="#334155">&#8226; Halstead Volume (HV)</text>
+    <text x="70" y="260" font-size="11" fill="#334155">&#8226; Maintainability Index (MI)</text>
+    <text x="70" y="278" font-size="11" fill="#334155">&#8226; Code Duplication % (DUP)</text>
+    <text x="70" y="296" font-size="11" fill="#334155">&#8226; Coupling Between Objects (CBO)</text>
+    <text x="70" y="314" font-size="11" fill="#334155">&#8226; Depth of Inheritance (DIT)</text>
+    <text x="70" y="332" font-size="11" fill="#334155">&#8226; Number of Methods (NOM)</text>
+    <text x="70" y="350" font-size="11" fill="#334155">&#8226; Comment Ratio % (CR)</text>
+    <text x="70" y="368" font-size="11" fill="#334155">&#8226; Code Smells Count (CS)</text>
 
-    <!-- Dynamic Sub-box -->
-    <rect x="65" y="390" width="250" height="265" rx="4" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1" />
-    <text x="75" y="412" font-size="12" font-weight="700" fill="#0369a1">Dynamic Test Telemetry (9)</text>
-    <text x="75" y="428" font-size="10" fill="#0284c7">Extracted via JaCoCo / Jest / PIT</text>
-    <line x1="75" y1="436" x2="305" y2="436" stroke="#e0f2fe" stroke-width="1" />
-
-    <text x="80" y="456" font-size="11" fill="#334155">• Statement Coverage % (SC)</text>
-    <text x="80" y="474" font-size="11" fill="#334155">• Branch Coverage % (BC)</text>
-    <text x="80" y="492" font-size="11" fill="#334155">• Test Pass Rate % (TPR)</text>
-    <text x="80" y="510" font-size="11" fill="#334155">• Defect Density (DD / kLOC)</text>
-    <text x="80" y="528" font-size="11" fill="#334155">• MTBF (Uptime Hours)</text>
-    <text x="80" y="546" font-size="11" fill="#334155">• Mutation Score % (MS)</text>
-    <text x="80" y="564" font-size="11" fill="#334155">• Test Execution Time (TET)</text>
-    <text x="80" y="582" font-size="11" fill="#334155">• Flaky Test Rate % (FTR)</text>
-    <text x="80" y="600" font-size="11" fill="#334155">• Regression Coverage % (RC)</text>
-    <rect x="75" y="618" width="230" height="24" rx="3" fill="#e0f2fe" />
-    <text x="190" y="634" font-size="10" font-weight="600" fill="#0369a1" text-anchor="middle">Min-Max Normalized to [0, 1]</text>
+    <!-- Dynamic Metrics -->
+    <rect x="55" y="390" width="250" height="265" rx="4" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1" />
+    <text x="65" y="412" font-size="12" font-weight="700" fill="#0369a1">Dynamic Test Telemetry (9)</text>
+    <text x="65" y="428" font-size="10" fill="#0284c7">Runners: JaCoCo / Jest / PIT / Datadog</text>
+    <line x1="65" y1="436" x2="295" y2="436" stroke="#e0f2fe" stroke-width="1" />
+    <text x="70" y="456" font-size="11" fill="#334155">&#8226; Statement Coverage % (SC)</text>
+    <text x="70" y="474" font-size="11" fill="#334155">&#8226; Branch Coverage % (BC)</text>
+    <text x="70" y="492" font-size="11" fill="#334155">&#8226; Test Pass Rate % (TPR)</text>
+    <text x="70" y="510" font-size="11" fill="#334155">&#8226; Defect Density (DD / kLOC)</text>
+    <text x="70" y="528" font-size="11" fill="#334155">&#8226; MTBF (Operational Hours)</text>
+    <text x="70" y="546" font-size="11" fill="#334155">&#8226; Mutation Score % (MS)</text>
+    <text x="70" y="564" font-size="11" fill="#334155">&#8226; Test Execution Time (TET)</text>
+    <text x="70" y="582" font-size="11" fill="#334155">&#8226; Flaky Test Rate % (FTR)</text>
+    <text x="70" y="600" font-size="11" fill="#334155">&#8226; Regression Coverage % (RC)</text>
+    <rect x="65" y="618" width="230" height="24" rx="3" fill="#e0f2fe" />
+    <text x="180" y="634" font-size="10" font-weight="600" fill="#0369a1" text-anchor="middle">Min-Max Scaled to [0, 1]</text>
   </g>
 
-  <!-- ARROWS FROM INPUTS TO MODELS -->
-  <line x1="330" y1="255" x2="390" y2="210" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
-  <line x1="330" y1="520" x2="390" y2="520" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
+  <!-- Connectors to Models -->
+  <line x1="320" y1="255" x2="390" y2="215" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="320" y1="520" x2="390" y2="520" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
 
-  <!-- ========================================== -->
-  <!-- BOX 2: DUAL AI MODELS (Middle Column) -->
-  <!-- ========================================== -->
-  <!-- Model 1: Neural Network (Static) -->
-  <g filter="url(#subtleShadow)">
-    <rect x="400" y="90" width="310" height="260" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
-    <rect x="400" y="90" width="310" height="34" rx="6" fill="#f8fafc" />
-    <rect x="400" y="118" width="310" height="6" fill="#f8fafc" />
-    <line x1="400" y1="124" x2="710" y2="124" stroke="#cbd5e1" stroke-width="1" />
+  <!-- 2A. NEURAL NETWORK -->
+  <g filter="url(#cardShadow)">
+    <rect x="400" y="90" width="320" height="260" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
+    <rect x="400" y="90" width="320" height="34" rx="6" fill="#f8fafc" />
+    <rect x="400" y="118" width="320" height="6" fill="#f8fafc" />
+    <line x1="400" y1="124" x2="720" y2="124" stroke="#cbd5e1" stroke-width="1" />
     <text x="415" y="113" font-size="13" font-weight="700" fill="#1e293b">2A. Neural Network (Static Pipeline)</text>
 
-    <text x="415" y="150" font-size="11.5" font-weight="600" fill="#475569">Feedforward Architecture (10 → 8 → 4 → 1):</text>
-    <text x="425" y="172" font-size="11" fill="#334155">• Input: 10 structural code metrics</text>
-    <text x="425" y="192" font-size="11" fill="#334155">• Layer 1: 8 neurons, Leaky ReLU (α = 0.01)</text>
-    <text x="425" y="212" font-size="11" fill="#334155">• Layer 2: 4 neurons, Leaky ReLU (α = 0.01)</text>
-    <text x="425" y="232" font-size="11" fill="#334155">• Output Layer: 1 neuron, Sigmoid σ(z)</text>
-    
-    <rect x="415" y="252" width="280" height="42" rx="4" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1" />
-    <text x="425" y="270" font-size="11" font-weight="700" fill="#6b21a8">Polarity Inversion Mapping:</text>
-    <text x="425" y="286" font-size="11" fill="#4c1d95">P_static = 1.0 - NN_raw  (Quality → Defect Risk)</text>
+    <text x="415" y="150" font-size="11.5" font-weight="600" fill="#475569">Multilayer Perceptron (10 &#8594; 8 &#8594; 4 &#8594; 1):</text>
+    <text x="425" y="172" font-size="11" fill="#334155">&#8226; Input: 10 normalized static metrics</text>
+    <text x="425" y="192" font-size="11" fill="#334155">&#8226; Hidden Layer 1: 8 neurons, Leaky ReLU (&#945; = 0.01)</text>
+    <text x="425" y="212" font-size="11" fill="#334155">&#8226; Hidden Layer 2: 4 neurons, Leaky ReLU (&#945; = 0.01)</text>
+    <text x="425" y="232" font-size="11" fill="#334155">&#8226; Output Layer: 1 neuron, Sigmoid activation &#963;(z)</text>
 
-    <rect x="415" y="304" width="280" height="32" rx="4" fill="#f1f5f9" />
-    <text x="555" y="324" font-size="11" font-weight="700" fill="#1e293b" text-anchor="middle">Output: P_static  [Attention Weight α = 0.42]</text>
+    <rect x="415" y="250" width="290" height="44" rx="4" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1" />
+    <text x="425" y="268" font-size="11" font-weight="700" fill="#6b21a8">Polarity Inversion Mapping:</text>
+    <text x="425" y="285" font-size="11" fill="#4c1d95">P_static = 1.0 - NN_raw  (Quality &#8594; Defect Risk)</text>
+
+    <rect x="415" y="304" width="290" height="32" rx="4" fill="#f1f5f9" />
+    <text x="560" y="324" font-size="11" font-weight="700" fill="#1e293b" text-anchor="middle">Output: P_static  [Attention Weight &#945; = 0.42]</text>
   </g>
 
-  <!-- Model 2: Gradient Boosting (Dynamic) -->
-  <g filter="url(#subtleShadow)">
-    <rect x="400" y="380" width="310" height="290" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
-    <rect x="400" y="380" width="310" height="34" rx="6" fill="#f8fafc" />
-    <rect x="400" y="408" width="310" height="6" fill="#f8fafc" />
-    <line x1="400" y1="414" x2="710" y2="414" stroke="#cbd5e1" stroke-width="1" />
+  <!-- 2B. GRADIENT BOOSTING -->
+  <g filter="url(#cardShadow)">
+    <rect x="400" y="380" width="320" height="295" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
+    <rect x="400" y="380" width="320" height="34" rx="6" fill="#f8fafc" />
+    <rect x="400" y="408" width="320" height="6" fill="#f8fafc" />
+    <line x1="400" y1="414" x2="720" y2="414" stroke="#cbd5e1" stroke-width="1" />
     <text x="415" y="403" font-size="13" font-weight="700" fill="#1e293b">2B. Gradient Boosting (Dynamic Pipeline)</text>
 
     <text x="415" y="438" font-size="11.5" font-weight="600" fill="#475569">8 Additive Decision Stumps (Threshold Rules):</text>
-    <text x="425" y="458" font-size="10.5" fill="#334155">• Tree 1: Branch Coverage ≤ 60% (w = 0.25)</text>
-    <text x="425" y="475" font-size="10.5" fill="#334155">• Tree 2: Mutation Score ≤ 50% (w = 0.22)</text>
-    <text x="425" y="492" font-size="10.5" fill="#334155">• Tree 3: Defect Density > 3.0 / kLOC (w = 0.20)</text>
-    <text x="425" y="509" font-size="10.5" fill="#334155">• Tree 4: Test Pass Rate ≤ 95% (w = 0.18)</text>
-    <text x="425" y="526" font-size="10.5" fill="#334155">• Trees 5–8: MTBF, Flaky Rate, SC, Regression</text>
+    <text x="425" y="458" font-size="10.5" fill="#334155">&#8226; Tree 1: Branch Coverage &#8804; 60% (weight = 0.25)</text>
+    <text x="425" y="475" font-size="10.5" fill="#334155">&#8226; Tree 2: Mutation Score &#8804; 50% (weight = 0.22)</text>
+    <text x="425" y="492" font-size="10.5" fill="#334155">&#8226; Tree 3: Defect Density &gt; 3.0 / kLOC (weight = 0.20)</text>
+    <text x="425" y="509" font-size="10.5" fill="#334155">&#8226; Tree 4: Test Pass Rate &#8804; 95% (weight = 0.18)</text>
+    <text x="425" y="526" font-size="10.5" fill="#334155">&#8226; Trees 5&#8211;8: MTBF, Flaky Rate, Statement, Regression</text>
 
-    <rect x="415" y="545" width="280" height="50" rx="4" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1" />
-    <text x="425" y="565" font-size="11" font-weight="700" fill="#0369a1">Additive Ensemble Aggregation:</text>
-    <text x="425" y="583" font-size="10.5" fill="#0c4a6e">F_M(x) = F_0 (0.50) + η (0.15) · ∑ w_m · h_m(x)</text>
+    <rect x="415" y="545" width="290" height="52" rx="4" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1" />
+    <text x="425" y="565" font-size="11" font-weight="700" fill="#0369a1">Additive Ensemble Formula:</text>
+    <text x="425" y="584" font-size="10.5" fill="#0c4a6e">F_M(x) = F_0 (0.50) + &#951; (0.15) &#183; &#8721; w_m &#183; h_m(x)</text>
 
-    <rect x="415" y="605" width="280" height="32" rx="4" fill="#f1f5f9" />
-    <text x="555" y="625" font-size="11" font-weight="700" fill="#1e293b" text-anchor="middle">Output: P_dynamic  [Attention Weight β = 0.58]</text>
+    <rect x="415" y="608" width="290" height="32" rx="4" fill="#f1f5f9" />
+    <text x="560" y="628" font-size="11" font-weight="700" fill="#1e293b" text-anchor="middle">Output: P_dynamic  [Attention Weight &#946; = 0.58]</text>
   </g>
 
-  <!-- ARROWS TO RIGHT COLUMN -->
-  <line x1="710" y1="220" x2="760" y2="220" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
-  <line x1="710" y1="520" x2="760" y2="350" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
+  <!-- Connectors to Right Column -->
+  <line x1="720" y1="220" x2="780" y2="220" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="720" y1="520" x2="780" y2="340" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
 
-  <!-- ========================================== -->
-  <!-- BOX 3: INTERACTION & FUSION (Right Column Top) -->
-  <!-- ========================================== -->
-  <g filter="url(#subtleShadow)">
-    <rect x="770" y="90" width="280" height="310" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
-    <rect x="770" y="90" width="280" height="34" rx="6" fill="#f8fafc" />
-    <rect x="770" y="118" width="280" height="6" fill="#f8fafc" />
-    <line x1="770" y1="124" x2="1050" y2="124" stroke="#cbd5e1" stroke-width="1" />
-    <text x="785" y="113" font-size="13" font-weight="700" fill="#1e293b">3. Cross-Feature Interaction &amp; Fusion</text>
+  <!-- 3. INTERACTION & FUSION -->
+  <g filter="url(#cardShadow)">
+    <rect x="790" y="90" width="290" height="315" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
+    <rect x="790" y="90" width="290" height="34" rx="6" fill="#f8fafc" />
+    <rect x="790" y="118" width="290" height="6" fill="#f8fafc" />
+    <line x1="790" y1="124" x2="1080" y2="124" stroke="#cbd5e1" stroke-width="1" />
+    <text x="805" y="113" font-size="13" font-weight="700" fill="#1e293b">3. Interaction Core &amp; Attention Fusion</text>
 
-    <rect x="782" y="138" width="256" height="150" rx="4" fill="#fffbeb" stroke="#fde68a" stroke-width="1" />
-    <text x="792" y="156" font-size="11" font-weight="700" fill="#92400e">5 Non-linear Interaction Synergies:</text>
-    <text x="792" y="174" font-size="10" fill="#b45309">• Ω1: CC/80 × (1 - BC/100) &emsp;&emsp; w1 = +0.15</text>
-    <text x="792" y="192" font-size="10" fill="#b45309">• Ω2: CS/50 × (1 - TPR/100) &emsp; w2 = +0.12</text>
-    <text x="792" y="210" font-size="10" fill="#b45309">• Ω3: CBO/40 × (1 - MS/100) &emsp;&nbsp; w3 = +0.10</text>
-    <text x="792" y="228" font-size="10" fill="#15803d">• Ω4: MI/100 × (1 - DD/15) &emsp;&emsp;&nbsp; w4 = -0.08</text>
-    <text x="792" y="246" font-size="10" fill="#b45309">• Ω5: DUP/60 × FTR/30 &emsp;&emsp;&emsp;&nbsp;&nbsp; w5 = +0.08</text>
-    <text x="792" y="272" font-size="9.5" fill="#78350f" font-weight="600">Interaction Score = ∑ (w_k · Ω_k)</text>
+    <rect x="802" y="136" width="266" height="154" rx="4" fill="#fffbeb" stroke="#fde68a" stroke-width="1" />
+    <text x="812" y="154" font-size="11" font-weight="700" fill="#92400e">5 Non-linear Interaction Terms (&#937;):</text>
+    
+    <text x="812" y="173" font-size="10" fill="#b45309">&#8226; &#937;1: (CC/80) &#215; (1 - BC/100)</text>
+    <text x="1005" y="173" font-size="10" font-weight="700" fill="#dc2626">w1 = +0.15</text>
+
+    <text x="812" y="192" font-size="10" fill="#b45309">&#8226; &#937;2: (CS/50) &#215; (1 - TPR/100)</text>
+    <text x="1005" y="192" font-size="10" font-weight="700" fill="#dc2626">w2 = +0.12</text>
+
+    <text x="812" y="211" font-size="10" fill="#b45309">&#8226; &#937;3: (CBO/40) &#215; (1 - MS/100)</text>
+    <text x="1005" y="211" font-size="10" font-weight="700" fill="#dc2626">w3 = +0.10</text>
+
+    <text x="812" y="230" font-size="10" fill="#15803d">&#8226; &#937;4: (MI/100) &#215; (1 - DD/15)</text>
+    <text x="1005" y="230" font-size="10" font-weight="700" fill="#16a34a">w4 = -0.08</text>
+
+    <text x="812" y="249" font-size="10" fill="#b45309">&#8226; &#937;5: (DUP/60) &#215; (FTR/30)</text>
+    <text x="1005" y="249" font-size="10" font-weight="700" fill="#dc2626">w5 = +0.08</text>
+
+    <text x="812" y="274" font-size="9.5" fill="#78350f" font-weight="700">Interaction Score = &#8721; (w_k &#183; &#937;_k)</text>
 
     <!-- Master Fusion Box -->
-    <rect x="782" y="298" width="256" height="90" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
-    <text x="792" y="318" font-size="11" font-weight="700" fill="#0f172a">Master Defect Probability Equation:</text>
-    <text x="792" y="338" font-size="11.5" font-weight="700" fill="#0284c7">P = α·P_static + β·P_dynamic + Score</text>
-    <text x="792" y="356" font-size="10" fill="#64748b">Where: α = 0.42,  β = 0.58  (α + β = 1.0)</text>
-    <text x="792" y="374" font-size="10" font-weight="600" fill="#059669">Bounded Range: P_defect ∈ [0.01, 0.99]</text>
+    <rect x="802" y="300" width="266" height="92" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <text x="812" y="320" font-size="11" font-weight="700" fill="#0f172a">Master Defect Probability Formula:</text>
+    <text x="812" y="340" font-size="11.5" font-weight="700" fill="#0284c7">P = &#945;&#183;P_static + &#946;&#183;P_dynamic + Score</text>
+    <text x="812" y="358" font-size="10" fill="#64748b">Weights: &#945; = 0.42,  &#946; = 0.58  (&#945; + &#946; = 1.0)</text>
+    <text x="812" y="376" font-size="10" font-weight="600" fill="#059669">Bounded Range: P_defect &#8712; [0.01, 0.99]</text>
   </g>
 
-  <!-- ARROW DOWN TO OUTPUTS -->
-  <line x1="910" y1="400" x2="910" y2="435" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
+  <!-- Connector Down to Outputs -->
+  <line x1="935" y1="405" x2="935" y2="440" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" />
 
-  <!-- ========================================== -->
-  <!-- BOX 4: QUALITY OUTPUTS & DEVOPS GATE (Right Column Bottom) -->
-  <!-- ========================================== -->
-  <g filter="url(#subtleShadow)">
-    <rect x="770" y="445" width="280" height="225" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
-    <rect x="770" y="445" width="280" height="34" rx="6" fill="#f0fdf4" />
-    <rect x="770" y="473" width="280" height="6" fill="#f0fdf4" />
-    <line x1="770" y1="479" x2="1050" y2="479" stroke="#bbf7d0" stroke-width="1" />
-    <text x="785" y="468" font-size="13" font-weight="700" fill="#166534">4. Outputs &amp; CI/CD Governance</text>
+  <!-- 4. OUTPUTS & GOVERNANCE -->
+  <g filter="url(#cardShadow)">
+    <rect x="790" y="450" width="290" height="225" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" />
+    <rect x="790" y="450" width="290" height="34" rx="6" fill="#f0fdf4" />
+    <rect x="790" y="478" width="290" height="6" fill="#f0fdf4" />
+    <line x1="790" y1="484" x2="1080" y2="484" stroke="#bbf7d0" stroke-width="1" />
+    <text x="805" y="473" font-size="13" font-weight="700" fill="#166534">4. Multi-Dimensional Outputs &amp; CI/CD</text>
 
-    <text x="785" y="504" font-size="11" fill="#1e293b">✔ <tspan font-weight="700">Quality Score:</tspan> Q = round((1 - P) × 100)</text>
-    <text x="785" y="524" font-size="11" fill="#1e293b">✔ <tspan font-weight="700">Defect Probability:</tspan> P_defect %</text>
-    <text x="785" y="544" font-size="11" fill="#1e293b">✔ <tspan font-weight="700">4-Tier Risk:</tspan> Low / Med / High / Critical</text>
-    <text x="785" y="564" font-size="11" fill="#1e293b">✔ <tspan font-weight="700">Reliability Index:</tspan> MTBF + DD + TPR</text>
-    <text x="785" y="584" font-size="11" fill="#1e293b">✔ <tspan font-weight="700">Maintainability Index:</tspan> MI + DUP + CBO</text>
+    <text x="805" y="508" font-size="11" fill="#1e293b">&#10004; <tspan font-weight="700">Quality Score:</tspan> Q = round((1 - P) &#215; 100)</text>
+    <text x="805" y="528" font-size="11" fill="#1e293b">&#10004; <tspan font-weight="700">Defect Probability:</tspan> P_defect %</text>
+    <text x="805" y="548" font-size="11" fill="#1e293b">&#10004; <tspan font-weight="700">4-Tier Risk:</tspan> Low / Med / High / Critical</text>
+    <text x="805" y="568" font-size="11" fill="#1e293b">&#10004; <tspan font-weight="700">Reliability Index:</tspan> MTBF + DD + TPR + MI</text>
+    <text x="805" y="588" font-size="11" fill="#1e293b">&#10004; <tspan font-weight="700">Maintainability Index:</tspan> MI + DUP + CBO</text>
 
-    <!-- CI/CD Box -->
-    <rect x="782" y="600" width="256" height="58" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
-    <text x="792" y="618" font-size="10.5" font-weight="700" fill="#0f172a">CI/CD Quality Gate Action:</text>
-    <text x="792" y="635" font-size="10" fill="#dc2626">• Fail/Block PR if Quality &lt; 65 or Risk == Critical</text>
-    <text x="792" y="650" font-size="10" fill="#16a34a">• Pass/Approve PR if Quality ≥ 65 (Emit Fix Tasks)</text>
+    <rect x="802" y="602" width="266" height="60" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+    <text x="812" y="620" font-size="10.5" font-weight="700" fill="#0f172a">Automated CI/CD Quality Gating:</text>
+    <text x="812" y="637" font-size="10" fill="#dc2626">&#8226; Hard Block: Quality &lt; 65 or Risk == Critical</text>
+    <text x="812" y="652" font-size="10" fill="#16a34a">&#8226; Approval: Quality &#8805; 65 (Emits prioritized fixes)</text>
   </g>
 
   <!-- FOOTER -->
-  <text x="550" y="700" font-size="11" fill="#94a3b8" text-anchor="middle">
-    HybridQA Research Framework · STQA Laboratory · Benchmarked on 50 Multi-Domain Software Modules
+  <text x="560" y="702" font-size="11" fill="#94a3b8" text-anchor="middle">
+    HybridQA Research Framework &#183; STQA Laboratory &#183; Tested across 50 Enterprise Software Modules
   </text>
 </svg>
