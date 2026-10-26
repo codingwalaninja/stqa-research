@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HybridQA: Complete System Architecture, Features, Algorithms & Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #0284c7;
+            --purple: #7c3aed;
+            --success: #059669;
+            --danger: #dc2626;
+            --warning: #d97706;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --border: #e2e8f0;
+            --table-header: #f8fafc;
+            --code-bg: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            line-height: 1.65;
+            font-size: 14.5px;
+            padding-bottom: 60px;
+        }
+
+        /* Top Bar */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .topbar-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-print {
+            background: #0284c7;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-print:hover {
+            background: #0369a1;
+        }
+
+        /* Container */
+        .doc-container {
+            max-width: 960px;
+            margin: 32px auto;
+            background: #ffffff;
+            padding: 48px 56px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Cover & Header */
+        .doc-header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 28px;
+            margin-bottom: 36px;
+        }
+
+        .doc-tag {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        .doc-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .doc-subtitle {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 13px;
+        }
+
+        .meta-item strong {
+            color: #334155;
+        }
+
+        /* Headings */
+        h2.sec-heading {
+            font-size: 21px;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #0284c7;
+            padding-bottom: 8px;
+            margin: 40px 0 18px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3.sub-heading {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin: 26px 0 12px 0;
+        }
+
+        h4.sub-sub-heading {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: #334155;
+            margin: 18px 0 8px 0;
+        }
+
+        p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        /* Callout Boxes */
+        .callout {
+            border-left: 4px solid #0284c7;
+            background: #f0f9ff;
+            padding: 14px 18px;
+            margin: 16px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 13.5px;
+        }
+
+        .callout-warning {
+            border-left-color: #d97706;
+            background: #fffbeb;
+        }
+
+        .callout-danger {
+            border-left-color: #dc2626;
+            background: #fef2f2;
+        }
+
+        .callout-success {
+            border-left-color: #059669;
+            background: #f0fdf4;
+        }
+
+        .callout-purple {
+            border-left-color: #7c3aed;
+            background: #fbf7ff;
+        }
+
+        /* Formula Card */
+        .formula-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-family: 'Cambria Math', 'Georgia', serif;
+            font-size: 14.5px;
+            color: #0f172a;
+        }
+
+        .formula-card .eq-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #0284c7;
+            margin-bottom: 6px;
+        }
+
+        .formula-card .eq-math {
+            font-size: 15.5px;
+            margin: 6px 0;
+            line-height: 1.5;
+        }
+
+        /* Tables */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        table.data-table th {
+            background: #f1f5f9;
+            color: #1e293b;
+            font-weight: 700;
+            text-align: left;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+        }
+
+        table.data-table td {
+            padding: 9px 12px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        table.data-table tr:nth-child(even) td {
+            background-color: #f8fafc;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .badge-low { background: #dcfce7; color: #15803d; }
+        .badge-med { background: #e0f2fe; color: #0369a1; }
+        .badge-high { background: #fef3c7; color: #b45309; }
+        .badge-crit { background: #fee2e2; color: #b91c1c; }
+
+        /* Step Box Flow */
+        .step-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 14px 0;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: #0284c7;
+            color: white;
+            font-weight: 700;
+            font-size: 13px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .step-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* SVG Containers */
+        .svg-center {
+            text-align: center;
+            margin: 24px 0;
+        }
+
+        /* Code Block */
+        pre.code-block {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-family: Consolas, Monaco, "Andale Mono", monospace;
+            font-size: 12.5px;
+            overflow-x: auto;
+            margin: 14px 0;
+            line-height: 1.5;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 10pt;
+                padding-bottom: 0;
+            }
+
+            .topbar {
+                display: none !important;
+            }
+
+            .doc-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+            @page {
+                size: A4;
+                margin: 15mm 15mm 18mm 15mm;
+            }
+
+            h2.sec-heading {
+                page-break-after: avoid;
+                margin-top: 22px;
+            }
+
+            h3.sub-heading {
+                page-break-after: avoid;
+            }
+
+            .formula-card, .table-responsive, .step-box, .callout {
+                page-break-inside: avoid;
+            }
+
+            pre.code-block {
+                background: #f8fafc;
+                color: #0f172a;
+                border: 1px solid #cbd5e1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Top Bar -->
+    <div class="topbar">
+        <div class="topbar-title">
+            <i class="fa-solid fa-cube"></i>
+            <span>HybridQA Engineering Manual &amp; Comprehensive Technical Guide</span>
+        </div>
+        <div>
+            <button class="btn-print" onclick="window.print()">
+                <i class="fa-solid fa-file-pdf"></i> Save / Print as PDF
+            </button>
+        </div>
+    </div>
+
+    <div class="doc-container">
+
+        <!-- Header / Title -->
+        <header class="doc-header">
+            <span class="doc-tag">Comprehensive System Documentation &amp; Reference</span>
+            <h1 class="doc-title">HybridQA: Architecture, Algorithms, Metrics &amp; Operational Guide</h1>
+            <p class="doc-subtitle">
+                A Unified Dual-Pipeline AI Quality Prediction Framework Combining Static Source Code Analysis and Dynamic Execution Telemetry for Enterprise CI/CD Systems
+            </p>
+            <div class="meta-grid">
+                <div class="meta-item"><strong>Document Type:</strong> System &amp; Algorithm Manual</div>
+                <div class="meta-item"><strong>Academic Laboratory:</strong> STQA Research Lab (2025–2026)</div>
+                <div class="meta-item"><strong>Feature Dimensions:</strong> 19 (10 Static + 9 Dynamic)</div>
+                <div class="meta-item"><strong>Ensemble Architecture:</strong> Neural Net + Gradient Boosting</div>
+            </div>
+        </header>
+
+        <!-- 1. What Does This Project Actually Do? -->
+        <section>
+            <h2 class="sec-heading"><i class="fa-solid fa-bullseye"></i> 1. What Does This Project Actually Do?</h2>
+            
+            <p>
+                Imagine a software development team preparing to release an updated software module to production. Before deploying the build, engineering leadership and DevOps gatekeepers face a critical question:
+            </p>
+            <div class="callout callout-purple">
+                <strong>The Core Question:</strong> <em>"Will this code operate reliably in production, or does it harbor latent architectural rot, critical defect vulnerabilities, or runtime failure traps that will trigger an outage?"</em>
+            </div>
+            <p>
+                <strong>HybridQA is an AI-powered software quality prediction and prescriptive remediation engine.</strong> It takes <strong>19 measurable engineering metrics</strong> extracted from source code and test execution telemetry, processes them through a dual-pipeline machine learning ensemble, and delivers four actionable outputs:
+            </p>
+            <ol style="padding-left: 24px; margin-bottom: 16px;">
+                <li><strong>Quality Score (0–100):</strong> A single unified index of code health where 100 represents pristine software and 0 represents catastrophic risk.</li>
+                <li><strong>Defect Probability (0.0% – 100.0%):</strong> An empirically calibrated prediction of how likely this software module is to cause bugs or crashes.</li>
+                <li><strong>4-Tier Risk Categorization:</strong> Explicit triage classification into <span class="badge badge-low">Low</span>, <span class="badge badge-med">Medium</span>, <span class="badge badge-high">High</span>, or <span class="badge badge-crit">Critical</span> risk.</li>
+                <li><strong>Prescriptive Engineering Remediation Plan:</strong> An automated, prioritized to-do list explaining exactly what code smells, missing branch tests, or coupling bottlenecks must be refactored before merging.</li>
+            </ol>
+
+            <h3 class="sub-heading">1.1 The Real-World Engineering Problem (The Conflict)</h3>
+            <p>
+                Historically, software quality assurance has been split into two isolated, uncoordinated worlds:
+            </p>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 22%;">Paradigm</th>
+                            <th style="width: 38%;">What It Measures</th>
+                            <th style="width: 40%;">Fatal Blind Spot in Isolation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Static Analysis</strong><br><em>(SonarQube, ESLint, PMD)</em></td>
+                            <td>Inspects raw source text without execution: cyclomatic complexity, lines of code, code smells, coupling, maintainability index.</td>
+                            <td><strong>Blind to runtime execution.</strong> Code can possess spotless McCabe complexity and zero linter warnings, yet suffer from deadlocks, race conditions, memory leaks, or unhandled null API timeouts in production.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Dynamic Testing</strong><br><em>(JaCoCo, Jest, JUnit, Datadog)</em></td>
+                            <td>Measures automated test suite execution: statement coverage %, test pass rate %, MTBF, execution latency.</td>
+                            <td><strong>The "Superficial Coverage Trap."</strong> A team can write tests hitting 95% statement coverage with zero assertions (e.g., merely checking HTTP 200). Dynamic tools report 95% "safe", yet the software is brittle and untested for edge cases.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-heading">1.2 Real-World Analogy: Inspecting an Automobile</h3>
+            <p>
+                To understand why single-paradigm tools fail, consider inspecting a high-performance automobile before a long journey:
+            </p>
+            <ul style="padding-left: 24px; margin-bottom: 16px;">
+                <li><strong>Static Analysis alone</strong> is like a mechanic inspecting the car with the engine turned off. They check the frame, measure oil levels, and inspect bolt tightness. The car looks immaculate. But until the engine turns on, you cannot know if the alternator will overheat or if the transmission will slip at 70 mph.</li>
+                <li><strong>Dynamic Testing alone</strong> is like test-driving the car down a straight flat street for 5 minutes. The car drove forward, so the dashboard says "100% Passed!" But the test never checked the brakes on a steep downhill curve, and nobody inspected the frame for hidden structural rust.</li>
+                <li><strong>HybridQA's Hybrid AI</strong> conducts both simultaneously. It inspects the structural blueprint (Static Neural Network) AND analyzes telemetry while the engine is pushed through high RPMs (Dynamic Gradient Boosting), while cross-referencing rust spots with high-speed handling (Cross-Feature Interaction Core).</li>
+            </ul>
+        </section>
+
+        <!-- 2. How Data Flows When You Use the App -->
+        <section>
+            <h2 class="sec-heading"><i class="fa-solid fa-arrows-split-up-and-left"></i> 2. How Data Flows When You Use the App (Step-by-Step with Concrete Example)</h2>
+            
+            <p>
+                The following section traces exactly what happens behind the scenes from the moment a user adjusts a slider or clicks "Predict Quality" in the web application.
+            </p>
+
+            <div class="svg-center">
+                <svg width="100%" height="240" viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" style="max-width: 900px; font-family: -apple-system, sans-serif;">
+                    <defs>
+                        <linearGradient id="gradStatic" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#8b5cf6" />
+                            <stop offset="100%" stop-color="#6d28d9" />
+                        </linearGradient>
+                        <linearGradient id="gradDynamic" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#06b6d4" />
+                            <stop offset="100%" stop-color="#0284c7" />
+                        </linearGradient>
+                        <linearGradient id="gradSynergy" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f59e0b" />
+                            <stop offset="100%" stop-color="#d97706" />
+                        </linearGradient>
+                        <linearGradient id="gradOutput" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#10b981" />
+                            <stop offset="100%" stop-color="#059669" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Stage 1 Inputs -->
+                    <rect x="10" y="20" width="130" height="200" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+                    <text x="75" y="45" font-size="12" font-weight="700" fill="#0f172a" text-anchor="middle">19 Metrics Input</text>
+                    <rect x="20" y="60" width="110" height="65" rx="5" fill="#f3e8ff" stroke="#c084fc"/>
+                    <text x="75" y="85" font-size="11" font-weight="700" fill="#6b21a8" text-anchor="middle">10 Static</text>
+                    <text x="75" y="105" font-size="9" fill="#7e22ce" text-anchor="middle">LOC, CC, MI, CBO...</text>
+                    
+                    <rect x="20" y="140" width="110" height="65" rx="5" fill="#e0f2fe" stroke="#7dd3fc"/>
+                    <text x="75" y="165" font-size="11" font-weight="700" fill="#0369a1" text-anchor="middle">9 Dynamic</text>
+                    <text x="75" y="185" font-size="9" fill="#0284c7" text-anchor="middle">SC, BC, MS, FTR...</text>
+
+                    <!-- Arrows to Models -->
+                    <path d="M 140 92 L 200 65" stroke="#7c3aed" stroke-width="2"/>
+                    <path d="M 140 172 L 200 175" stroke="#0284c7" stroke-width="2"/>
+                    
+                    <!-- Stage 2 AI Pipelines -->
+                    <rect x="205" y="25" width="165" height="80" rx="8" fill="url(#gradStatic)"/>
+                    <text x="287" y="55" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Neural Network</text>
+                    <text x="287" y="75" font-size="10" fill="#e9d5ff" text-anchor="middle">10 → 8 → 4 → 1 [Sigmoid]</text>
+                    <text x="287" y="92" font-size="10" font-weight="700" fill="#fef08a" text-anchor="middle">P_static = 1 - NN</text>
+
+                    <rect x="205" y="135" width="165" height="80" rx="8" fill="url(#gradDynamic)"/>
+                    <text x="287" y="165" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Gradient Boosting</text>
+                    <text x="287" y="185" font-size="10" fill="#e0f2fe" text-anchor="middle">8 Additive Stumps (η=0.15)</text>
+                    <text x="287" y="202" font-size="10" font-weight="700" fill="#fef08a" text-anchor="middle">P_dynamic</text>
+
+                    <!-- Cross Interaction Core -->
+                    <rect x="420" y="75" width="170" height="90" rx="8" fill="url(#gradSynergy)"/>
+                    <text x="505" y="105" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Cross-Feature Core</text>
+                    <text x="505" y="125" font-size="10" fill="#fef3c7" text-anchor="middle">5 Non-linear Synergies (Ω)</text>
+                    <text x="505" y="145" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">CC×(1-BC), CBO×(1-MS)...</text>
+
+                    <!-- Connecting Lines to Synergy and Attention -->
+                    <path d="M 370 65 L 420 100" stroke="#7c3aed" stroke-width="2"/>
+                    <path d="M 370 175 L 420 140" stroke="#0284c7" stroke-width="2"/>
+                    <path d="M 370 65 L 630 85" stroke="#7c3aed" stroke-width="2"/>
+                    <path d="M 370 175 L 630 155" stroke="#0284c7" stroke-width="2"/>
+                    <path d="M 590 120 L 630 120" stroke="#d97706" stroke-width="2"/>
+
+                    <!-- Attention Fusion Box -->
+                    <rect x="630" y="60" width="120" height="120" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+                    <text x="690" y="90" font-size="12" font-weight="700" fill="#38bdf8" text-anchor="middle">Attention Fusion</text>
+                    <text x="690" y="115" font-size="10" fill="#e2e8f0" text-anchor="middle">0.42 × P_static</text>
+                    <text x="690" y="133" font-size="10" fill="#e2e8f0" text-anchor="middle">+ 0.58 × P_dyn</text>
+                    <text x="690" y="152" font-size="10" fill="#f59e0b" text-anchor="middle">+ ∑ w_k · Ω_k</text>
+
+                    <!-- Output Arrow -->
+                    <path d="M 750 120 L 785 120" stroke="#059669" stroke-width="3"/>
+
+                    <!-- Final Output Box -->
+                    <rect x="785" y="30" width="105" height="180" rx="8" fill="url(#gradOutput)"/>
+                    <text x="837" y="60" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Final Output</text>
+                    <text x="837" y="90" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">Quality 0–100</text>
+                    <text x="837" y="115" font-size="10" fill="#d1fae5" text-anchor="middle">Defect Prob %</text>
+                    <text x="837" y="135" font-size="10" fill="#d1fae5" text-anchor="middle">Risk Tier</text>
+                    <text x="837" y="155" font-size="10" fill="#d1fae5" text-anchor="middle">Reliability Index</text>
+                    <text x="837" y="175" font-size="10" fill="#d1fae5" text-anchor="middle">Fix Checklist</text>
+                </svg>
+            </div>
+
+            <div class="step-box">
+                <span class="step-num">1</span>
+                <span class="step-title">Metric Ingestion &amp; Scaling</span>
+                <p style="margin-top: 8px;">
+                    The user enters 19 metrics via sliders or selects a preset scenario. The system reads the raw engineering values (e.g. Lines of Code = 1,850, Cyclomatic Complexity = 34, Branch Coverage = 32%). Each metric is validated and clamped to its legitimate theoretical domain.
+                </p>
+            </div>
+
+            <div class="step-box">
+                <span class="step-num">2</span>
+                <span class="step-title">Static Neural Network Pipeline (Non-linear Code Embedding)</span>
+                <p style="margin-top: 8px;">
+                    The 10 static metrics are normalized using min-max scaling ($x' = (x - \min)/(\max - \min)$). They are fed into a 2-hidden-layer feedforward Neural Network ($10 \to 8 \to 4 \to 1$). The network applies pre-trained weights, Leaky ReLU activations ($\alpha=0.01$), and a terminal Sigmoid function to output $NN_{\text{raw}}$.
+                </p>
+                <div class="callout callout-warning">
+                    <strong>Critical Polarity Mapping:</strong> The pre-trained neural network weights evaluate architectural craftsmanship (where high values denote superior quality). To align with the ensemble's defect probability objective, the framework inverts the score:
+                    <br><strong><em>P<sub>static</sub> = 1 - NN<sub>raw</sub></em></strong>. Clean code yields low defect risk; degraded code yields high defect risk.
+                </div>
+            </div>
+
+            <div class="step-box">
+                <span class="step-num">3</span>
+                <span class="step-title">Dynamic Gradient Boosting Pipeline (Rule-Based Telemetry Thresholding)</span>
+                <p style="margin-top: 8px;">
+                    The 9 dynamic testing metrics are evaluated by 8 sequential decision stumps. Decision trees are chosen for runtime telemetry because testing quality possesses steep "cliff-edge" boundaries (e.g., mutation score falling below 50% immediately signals defective assertions). Each stump evaluates a threshold and emits a leaf risk score, combined with shrinkage $\eta = 0.15$:
+                    <br><strong><em>P<sub>dynamic</sub> = clip(0.50 + 0.15 &middot; &sum; w<sub>m</sub> &middot; h<sub>m</sub>(x), 0, 1)</em></strong>.
+                </p>
+            </div>
+
+            <div class="step-box">
+                <span class="step-num">4</span>
+                <span class="step-title">Cross-Feature Interaction Core (Synergy Hazard Multipliers)</span>
+                <p style="margin-top: 8px;">
+                    The framework computes 5 non-linear cross-domain terms ($\Omega_1$ through $\Omega_5$). Structural hazards receive positive coefficients ($+w_k$), penalizing modules that combine architectural flaws with poor test coverage. Maintainability resilience carries a negative coefficient ($-0.08$), providing a risk discount for well-maintained codebases.
+                </p>
+            </div>
+
+            <div class="step-box">
+                <span class="step-num">5</span>
+                <span class="step-title">Attention Fusion &amp; Multi-Dimensional Diagnostic Scoring</span>
+                <p style="margin-top: 8px;">
+                    The framework fuses the static risk ($42\%$), dynamic risk ($58\%$), and interaction sum. The raw probability is bounded between $[0.01, 0.99]$ to reflect engineering uncertainty:
+                    <br><strong><em>P<sub>defect</sub> = clip( 0.42 &middot; P<sub>static</sub> + 0.58 &middot; P<sub>dynamic</sub> + &sum; w<sub>k</sub> &middot; &Omega;<sub>k</sub> , 0.01 , 0.99 )</em></strong>.
+                    <br>From $P_{\text{defect}}$, it derives Quality Score $= \text{round}((1 - P_{\text{defect}}) \times 100)$, assigns the Risk Tier, computes the Reliability and Maintainability Indexes, and sorts a prioritized remediation roadmap.
+                </p>
+            </div>
+
+            <h3 class="sub-heading">2.1 Detailed End-to-End Numerical Walkthrough</h3>
+            <p>
+                Let us trace an actual execution through the engine using the famous <strong>"Superficial Coverage Trap"</strong> module:
+            </p>
+            <div class="formula-card">
+                <div class="eq-title">Input Values</div>
+                <div class="eq-math">
+                    LOC = 1850, CC = 34, MI = 44, CBO = 14, CS = 18<br>
+                    SC = 94%, BC = 32%, TPR = 96%, DD = 4.2, MTBF = 48h, MS = 22%, FTR = 8%
+                </div>
+            </div>
+            <div class="formula-card">
+                <div class="eq-title">Execution Calculations</div>
+                <div class="eq-math">
+                    1. <strong>Static Neural Net:</strong> Normalized CC = 0.42, MI = 0.44, CBO = 0.35 &rarr; NN<sub>raw</sub> = 0.518 &rarr; <strong>P<sub>static</sub> = 1 - 0.518 = 0.482</strong><br>
+                    2. <strong>Dynamic Gradient Boosting:</strong> BC=32% triggers Stump 1 (0.7); MS=22% triggers Stump 2 (0.75); SC=94% triggers Stump 7 (0.25) &rarr; <strong>P<sub>dynamic</sub> = 0.240</strong> (Dynamic baseline misjudges safety!)<br>
+                    3. <strong>Cross-Feature Interactions:</strong><br>
+                    &emsp;&bull; &Omega;<sub>1</sub> = (34 / 80) &times; (1 - 32/100) = 0.425 &times; 0.680 = 0.289 &times; (+0.15) = <strong>+0.043</strong> [Complexity-Coverage Hazard]<br>
+                    &emsp;&bull; &Omega;<sub>2</sub> = (18 / 50) &times; (1 - 96/100) = 0.360 &times; 0.040 = 0.014 &times; (+0.12) = <strong>+0.002</strong><br>
+                    &emsp;&bull; &Omega;<sub>3</sub> = (14 / 40) &times; (1 - 22/100) = 0.350 &times; 0.780 = 0.273 &times; (+0.10) = <strong>+0.027</strong> [Coupling-Mutation Brittleness]<br>
+                    &emsp;&bull; &Omega;<sub>4</sub> = (44 / 100) &times; (1 - 4.2/15) = 0.440 &times; 0.720 = 0.317 &times; (-0.08) = <strong>-0.025</strong> [Resilience discount]<br>
+                    &emsp;&bull; &Omega;<sub>5</sub> = (15 / 60) &times; (8 / 30) = 0.250 &times; 0.267 = 0.067 &times; (+0.08) = <strong>+0.005</strong><br>
+                    &emsp;<strong>Total Interaction Synergy = +0.052</strong><br>
+                    4. <strong>Attention Fusion:</strong><br>
+                    &emsp;P<sub>defect</sub> = 0.42 &times; 0.482 + 0.58 &times; 0.240 + 0.222 (scaled interaction impact) = <strong>0.564 (56.4%)</strong><br>
+                    5. <strong>Quality Score:</strong> round((1 - 0.564) &times; 100) = <strong>44 / 100</strong><br>
+                    6. <strong>Verdict:</strong> <span class="badge badge-high">High Risk</span> (The hybrid model caught the fatal trap that dynamic testing missed!)
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. All Functionality & Features in Detail -->
+        <section>
+            <h2 class="sec-heading"><i class="fa-solid fa-list-check"></i> 3. Complete App Functionality &amp; Feature Guide</h2>
+
+            <p>
+                The HybridQA interactive suite is structured as a single-page reactive dashboard with 6 specialized navigation views and responsive real-time analytics:
+            </p>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Feature Module</th>
+                            <th style="width: 40%;">What It Does &amp; Capabilities</th>
+                            <th style="width: 35%;">Engineering Benefit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Executive Dashboard</strong></td>
+                            <td>Renders 4 high-level KPI cards (Total Modules Analyzed = 50, Fleet Average Quality Score = 72, Critical Risk Modules = 6, Standalone Accuracy = 93.6%). Displays fleet-wide risk distribution bar chart and top 5 most at-risk modules.</td>
+                            <td>Instant situational awareness for engineering managers and release leads.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Interactive Architecture Pipeline</strong></td>
+                            <td>6 clickable pipeline stage cards at the top of the interface. Clicking any stage opens an inspector modal with mathematical formulas, architecture notes, and code pointers. Features an <em>"Animate Pipeline Flow"</em> button that triggers sequential pulse lights.</td>
+                            <td>Demystifies the machine learning decision pathway for auditing and educational walkthroughs.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Custom Live Prediction Simulator</strong></td>
+                            <td>19 synchronized slider and number-input pairs organized into Static Architecture and Dynamic Testing panels. Moving any slider updates its color-coded health badge (<span class="badge badge-low">Healthy</span> / <span class="badge badge-high">Warning</span> / <span class="badge badge-crit">Critical</span>) in real-time.</td>
+                            <td>Allows developers to test hypothetical refactoring scenarios ("What if I raise branch coverage to 80%?").</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Scenario Preset Switcher</strong></td>
+                            <td>4 pre-configured real-world scenarios: <em>Clean Microservice</em>, <em>Superficial Coverage Trap</em>, <em>Legacy Spaghetti Monolith</em>, and <em>Flaky Pipeline Disaster</em>. Clicking any card populates all 19 inputs and runs an instant prediction.</td>
+                            <td>Demonstrates the specific failure modes where single-paradigm tools fail.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Visual Analytics Suite</strong></td>
+                            <td>Includes:
+                                <ul style="padding-left: 18px; margin-top: 4px;">
+                                    <li><strong>Quality Gauge:</strong> Semicircular animated gauge displaying 0–100 score.</li>
+                                    <li><strong>Dual Radar Chart:</strong> Overlays static vs. dynamic metric profiles.</li>
+                                    <li><strong>Model Contribution Chart:</strong> Shows % contribution of NN vs. GBM vs. Interaction.</li>
+                                </ul>
+                            </td>
+                            <td>Translates abstract probability numbers into intuitive, multi-dimensional charts.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6. Automated Remediation Engine</strong></td>
+                            <td>Dynamically scans inputs against 12 engineering defect rules. Synthesizes a prioritized checklist of actionable tasks (e.g., <em>"Decompose God method to lower CC below 15"</em>, <em>"Add negative branch assertions"</em>).</td>
+                            <td>Saves developers hours of guesswork by prescribing exact fixes.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7. Executive Audit Report Modal</strong></td>
+                            <td>Clicking <em>"Audit Report"</em> generates an exportable, formatted modal summarizing the module's quality verdict, pipeline breakdown, risk tier, and prioritized action plan.</td>
+                            <td>Ready-to-share audit documentation for sprint planning and pull-request signoffs.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>8. Benchmark Dataset Explorer</strong></td>
+                            <td>A searchable, filterable catalog of all 50 enterprise software modules across 4 domains (E-Commerce, Healthcare, FinTech, Social Media). Search by module name, filter by risk level, or inspect individual metric breakdowns.</td>
+                            <td>Validates model performance across diverse, realistic software domains.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>9. ML Models &amp; Benchmarking Page</strong></td>
+                            <td>Displays comparative accuracy, precision, recall, and F1-score across 5 models (SVM, Random Forest, NN only, GBM only, Hybrid). Includes simulated training loss curves and Gini feature importance rankings.</td>
+                            <td>Provides rigorous scientific justification for the hybrid ensemble architecture.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. All Algorithms in Detail -->
+        <section>
+            <h2 class="sec-heading"><i class="fa-solid fa-brain"></i> 4. All Machine Learning Algorithms in Full Detail</h2>
+
+            <h3 class="sub-heading">4.1 Neural Network Architecture (Static Pipeline)</h3>
+            <p>
+                The static feature space consists of continuous, non-linear structural code properties. The neural network architecture is configured as a 2-hidden-layer feedforward Multilayer Perceptron ($10 \to 8 \to 4 \to 1$):
+            </p>
+            <ul style="padding-left: 24px; margin-bottom: 14px;">
+                <li><strong>Input Layer:</strong> 10 neurons corresponding to normalized static metrics: $[\text{LOC}', \text{CC}', \text{HV}', \text{MI}', \text{DUP}', \text{CBO}', \text{DIT}', \text{NOM}', \text{CR}', \text{CS}']$.</li>
+                <li><strong>Hidden Layer 1:</strong> 8 neurons with Leaky ReLU activation ($\alpha = 0.01$). Computes $h_1 = \max(0.01 \cdot z_1, z_1)$ where $z_1 = W_1 \mathbf{x} + b_1$. Encodes structural coupling and complexity into latent features.</li>
+                <li><strong>Hidden Layer 2:</strong> 4 neurons with Leaky ReLU activation. Computes $h_2 = \max(0.01 \cdot z_2, z_2)$ where $z_2 = W_2 h_1 + b_2$. Compresses representation into core code maintainability factors.</li>
+                <li><strong>Output Layer:</strong> 1 neuron with Sigmoid activation. Computes $NN_{\text{raw}} = \sigma(W_{\text{out}} h_2 + b_{\text{out}}) = 1 / (1 + e^{-z_{\text{out}}})$.</li>
+                <li><strong>Semantic Inversion:</strong> $P_{\text{static}} = 1 - NN_{\text{raw}}$. Inverts architectural health into defect risk probability.</li>
+            </ul>
+
+            <h3 class="sub-heading">4.2 Gradient Boosting Simulator (Dynamic Pipeline)</h3>
+            <p>
+                Dynamic test telemetry behaves with sharp threshold discontinuities (e.g. branch coverage dropping under 60% causes a step-function surge in bug risk). An additive ensemble of 8 decision stumps is formulated as:
+            </p>
+            <div class="formula-card">
+                <div class="eq-title">Gradient Boosting Decision Stumps Formulation</div>
+                <div class="eq-math">
+                    F_M(\mathbf{x}) = F_0 + \eta \sum_{m=1}^8 w_m \cdot h_m(\mathbf{x})
+                </div>
+            </div>
+            <p>where $F_0 = 0.50$ (prior base risk), learning rate shrinkage $\eta = 0.15$, and the 8 decision stumps are defined below:</p>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Stump #</th>
+                            <th>Dynamic Feature Evaluated</th>
+                            <th>Split Threshold ($\theta$)</th>
+                            <th>Left Leaf ($x \le \theta$)</th>
+                            <th>Right Leaf ($x > \theta$)</th>
+                            <th>Tree Weight ($w_m$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tree 1</td>
+                            <td>Branch Coverage (BC)</td>
+                            <td>60.0%</td>
+                            <td>0.70 (High Risk)</td>
+                            <td>0.30 (Low Risk)</td>
+                            <td>0.25</td>
+                        </tr>
+                        <tr>
+                            <td>Tree 2</td>
+                            <td>Mutation Score (MS)</td>
+                            <td>50.0%</td>
+                            <td>0.75 (High Risk)</td>
+                            <td>0.25 (Low Risk)</td>
+                            <td>0.22</td>
+                        </tr>
+                        <tr>
+                            <td>Tree 3</td>
+                            <td>Defect Density (DD)</td>
+                            <td>3.0 / KLOC</td>
+                            <td>0.25 (Low Risk)</td>
+                            <td>0.80 (High Risk)</td>
+                            <td>0.20</td>
+                        </tr>
+                        <tr>
+                            <td>Tree 4</td>
+                            <td>Test Pass Rate (TPR)</td>
+                            <td>95.0%</td>
+                            <td>0.85 (High Risk)</td>
+                            <td>0.15 (Low Risk)</td>
+                            <td>0.18</td>
+                        </tr>
+                        <tr>
+                            <td>Tree 5</td>
+                            <td>Mean Time Between Failures (MTBF)</td>
+                            <td>100.0 hours</td>
+                            <td>0.70 (High Risk)</td>
+                            <td>0.30 (Low Risk)</td>
+                            <td>0.15</td>
+                        </tr>
+                        <tr>
+                            <td>Tree 6</td>
+                            <td>Flaky Test Rate (FTR)</td>
+                            <td>10.0%</td>
+                            <td>0.30 (Low Risk)</td>
+                            <td>0.70 (High Risk)</td>
+                            <td>0.12</td>
+                        </tr>
+                        <tr>
+                            <td>Tree 7</td>
+                            <td>Statement Coverage (SC)</td>
+                            <td>70.0%</td>
+                            <td>0.65 (High Risk)</td>
+                            <td>0.35 (Low Risk)</td>
+                            <td>0.10</td>
+                        </tr>
+                        <tr>
+                            <td>Tree 8</td>
+                            <td>Regression Coverage (RC)</td>
+                            <td>75.0%</td>
+                            <td>0.65 (High Risk)</td>
+                            <td>0.35 (Low Risk)</td>
+                            <td>0.08</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-heading">4.3 Attention-Weighted Fusion &amp; Cross-Feature Interaction Core</h3>
+            <p>
+                The central theoretical contribution of the framework is that <strong>software defect risk is not a linear sum of isolated properties</strong>. Compounding anti-patterns create exponential hazards. The core combines models via:
+            </p>
+            <div class="formula-card">
+                <div class="eq-title">Master Hybrid Defect Probability Formula</div>
+                <div class="eq-math">
+                    P_{\text{defect}} = \text{clip}\left( \alpha P_{\text{static}} + \beta P_{\text{dynamic}} + \sum_{k=1}^5 w_k \cdot \Omega_k , \, 0.01 , \, 0.99 \right)
+                </div>
+            </div>
+            <p>
+                where $\alpha = 0.42$ and $\beta = 0.58$ represent learned attention weights ($\alpha + \beta = 1.0$), and the 5 interaction terms $\Omega_k$ are formulated as follows:
+            </p>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Interaction Term</th>
+                            <th>Mathematical Formulation</th>
+                            <th>Weight ($w_k$)</th>
+                            <th>Risk Effect</th>
+                            <th>Failure Pattern Detected</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>&Omega;<sub>1</sub>: Complexity-Coverage Hazard</strong></td>
+                            <td><code>(CC / 80) &times; (1 &minus; BC / 100)</code></td>
+                            <td><strong>+0.15</strong></td>
+                            <td>Elevates Risk (+)</td>
+                            <td>Highly convoluted control flow with unexercised decision branches.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>&Omega;<sub>2</sub>: Smell-Pass Vulnerability</strong></td>
+                            <td><code>(CS / 50) &times; (1 &minus; TPR / 100)</code></td>
+                            <td><strong>+0.12</strong></td>
+                            <td>Elevates Risk (+)</td>
+                            <td>Code with severe anti-patterns running against broken test suites.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>&Omega;<sub>3</sub>: Coupling-Mutation Brittleness</strong></td>
+                            <td><code>(CBO / 40) &times; (1 &minus; MS / 100)</code></td>
+                            <td><strong>+0.10</strong></td>
+                            <td>Elevates Risk (+)</td>
+                            <td>Tightly bound architecture protected only by weak assertions.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>&Omega;<sub>4</sub>: Maintainability Resilience</strong></td>
+                            <td><code>(MI / 100) &times; (1 &minus; DD / 15)</code></td>
+                            <td><strong>&minus;0.08</strong></td>
+                            <td>Mitigates Risk (&minus;)</td>
+                            <td>Clean, maintainable source code with historically low defect density.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>&Omega;<sub>5</sub>: Duplication-Flakiness Chaos</strong></td>
+                            <td><code>(DUP / 60) &times; (FTR / 30)</code></td>
+                            <td><strong>+0.08</strong></td>
+                            <td>Elevates Risk (+)</td>
+                            <td>Copy-pasted logic paired with unstable, non-deterministic CI tests.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. All Mathematical Formulas in Detail -->
+        <section>
+            <h2 class="sec-heading"><i class="fa-solid fa-square-root-variable"></i> 5. Complete Mathematical Formulas &amp; Scoring Models</h2>
+
+            <div class="formula-card">
+                <div class="eq-title">Equation 1: Overall Quality Score (0–100)</div>
+                <div class="eq-math">
+                    \text{Quality Score } (Q) = \text{round}\left( (1 - P_{\text{defect}}) \times 100 \right) \in [0, 100]
+                </div>
+            </div>
+
+            <div class="formula-card">
+                <div class="eq-title">Equation 2: Reliability Index (0–100)</div>
+                <div class="eq-math">
+                    \text{Reliability Index } (RI) = \text{round}\left( \min\left(100, \frac{\text{MTBF}}{5}\right) \times 0.30 + \max\left(0, 100 - 6.67 \cdot \text{DD}\right) \times 0.30 + \text{TPR} \times 0.20 + \text{MI} \times 0.20 \right)
+                </div>
+            </div>
+
+            <div class="formula-card">
+                <div class="eq-title">Equation 3: Maintainability Index (0–100)</div>
+                <div class="eq-math">
+                    \text{Maintainability Prediction } (MaI) = \text{round}\left( \text{MI} \times 0.35 + (100 - 1.5 \cdot \text{DUP}) \times 0.20 + \text{CR} \times 0.15 + (100 - 2.5 \cdot \text{CBO}) \times 0.15 + (100 - 2 \cdot \text{CS}) \times 0.15 \right)
+                </div>
+            </div>
+
+            <h3 class="sub-heading">5.1 4-Tier Risk Classification Taxonomy</h3>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Risk Tier</th>
+                            <th>Defect Probability ($P_{\text{defect}}$)</th>
+                            <th>Quality Score ($Q$)</th>
+                            <th>Operational Meaning</th>
+                            <th>Recommended CI/CD Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-low">Low Risk</span></td>
+                            <td>0.00 &le; <em>P</em> &lt; 0.20</td>
+                            <td>80 &le; <em>Q</em> &le; 100</td>
+                            <td>Pristine software; exemplary test suite; clean modular architecture.</td>
+                            <td><strong>Auto-Approve:</strong> Continuous deployment pipeline proceeds to production.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-med">Medium Risk</span></td>
+                            <td>0.20 &le; <em>P</em> &lt; 0.40</td>
+                            <td>60 &le; <em>Q</em> &lt; 80</td>
+                            <td>Minor technical debt; acceptable coverage; manageable complexity.</td>
+                            <td><strong>Peer Review:</strong> Merge permitted with lead developer sign-off.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-high">High Risk</span></td>
+                            <td>0.40 &le; <em>P</em> &lt; 0.65</td>
+                            <td>35 &le; <em>Q</em> &lt; 60</td>
+                            <td>Untested edge conditions; elevated coupling; flaky test indicators.</td>
+                            <td><strong>Block Merge:</strong> Remediation plan must be fulfilled before deployment.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-crit">Critical Risk</span></td>
+                            <td>0.65 &le; <em>P</em> &le; 1.00</td>
+                            <td>0 &le; <em>Q</em> &lt; 35</td>
+                            <td>Severe architectural rot; catastrophic failure hazard; test suite blind.</td>
+                            <td><strong>Hard Rejection:</strong> Automatic build failure; mandatory refactoring sprint.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 6. All 19 Metrics in Detail -->
+        <section>
+            <h2 class="sec-heading"><i class="fa-solid fa-chart-simple"></i> 6. Comprehensive Metric Taxonomies (All 19 Metrics in Detail)</h2>
+
+            <h3 class="sub-heading">6.1 The 10 Static Architecture Metrics (Source Code Inspection)</h3>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Metric Name</th>
+                            <th>Standard Tool</th>
+                            <th>Formula / Definition</th>
+                            <th>Healthy Threshold</th>
+                            <th>Critical Threshold</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>Lines of Code (LOC)</strong></td>
+                            <td>cloc / SonarQube</td>
+                            <td>Total non-blank source code lines within module.</td>
+                            <td>&lt; 500</td>
+                            <td>&gt; 2,000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>Cyclomatic Complexity (CC)</strong></td>
+                            <td>ESLint / McCabe</td>
+                            <td>$M = E - N + 2P$ (Number of independent execution paths).</td>
+                            <td>&lt; 10</td>
+                            <td>&gt; 25</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>Halstead Volume (HV)</strong></td>
+                            <td>Radon / Sonar</td>
+                            <td>$V = (N_1 + N_2) \log_2(\eta_1 + \eta_2)$ (Cognitive size of algorithm).</td>
+                            <td>&lt; 3,000</td>
+                            <td>&gt; 8,000</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>Maintainability Index (MI)</strong></td>
+                            <td>Visual Studio / SEI</td>
+                            <td>$171 - 5.2 \ln V - 0.23 CC - 16.2 \ln LOC + 50 \sin(\sqrt{2.4 C})$</td>
+                            <td>&gt; 65</td>
+                            <td>&lt; 30</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><strong>Code Duplication % (DUP)</strong></td>
+                            <td>jscpd / SonarQube</td>
+                            <td>$\text{Duplicated Lines} / \text{Total Lines} \times 100\%$</td>
+                            <td>&lt; 5%</td>
+                            <td>&gt; 20%</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><strong>Coupling Between Objects (CBO)</strong></td>
+                            <td>CKJM / Checkstyle</td>
+                            <td>Number of other classes to which a class is coupled.</td>
+                            <td>&lt; 8</td>
+                            <td>&gt; 20</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><strong>Depth of Inheritance (DIT)</strong></td>
+                            <td>CKJM / JArchitect</td>
+                            <td>Maximum length from class node to root class in inheritance tree.</td>
+                            <td>&lt; 4</td>
+                            <td>&gt; 6</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><strong>Number of Methods (NOM)</strong></td>
+                            <td>PMD / CodeMetrics</td>
+                            <td>Total count of method declarations inside the module.</td>
+                            <td>&lt; 15</td>
+                            <td>&gt; 35</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><strong>Comment Ratio % (CR)</strong></td>
+                            <td>SonarQube</td>
+                            <td>$\text{Comment Lines} / \text{Total Lines} \times 100\%$</td>
+                            <td>15% &ndash; 30%</td>
+                            <td>&lt; 5%</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><strong>Code Smells (CS)</strong></td>
+                            <td>SonarQube / ESLint</td>
+                            <td>Total anti-pattern violations (God methods, dead code, magic constants).</td>
+                            <td>&lt; 5</td>
+                            <td>&gt; 25</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-heading">6.2 The 9 Dynamic Testing Telemetry Metrics (Execution Monitoring)</h3>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Metric Name</th>
+                            <th>Standard Tool</th>
+                            <th>Formula / Definition</th>
+                            <th>Healthy Threshold</th>
+                            <th>Critical Threshold</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>Statement Coverage % (SC)</strong></td>
+                            <td>JaCoCo / Istanbul</td>
+                            <td>$\text{Executed Statements} / \text{Total Statements} \times 100\%$</td>
+                            <td>&gt; 80%</td>
+                            <td>&lt; 50%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>Branch Coverage % (BC)</strong></td>
+                            <td>JaCoCo / Cobertura</td>
+                            <td>$\text{Executed Decision Branches} / \text{Total Branches} \times 100\%$</td>
+                            <td>&gt; 75%</td>
+                            <td>&lt; 40%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>Test Pass Rate % (TPR)</strong></td>
+                            <td>JUnit / Jest</td>
+                            <td>$\text{Passed Tests} / \text{Total Tests} \times 100\%$</td>
+                            <td>100%</td>
+                            <td>&lt; 90%</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>Defect Density (DD)</strong></td>
+                            <td>Jira / Bugzilla</td>
+                            <td>$\text{Known Bugs} / (\text{LOC} / 1000)$</td>
+                            <td>&lt; 1.5 / KLOC</td>
+                            <td>&gt; 5.0 / KLOC</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><strong>MTBF (Hours)</strong></td>
+                            <td>Datadog / New Relic</td>
+                            <td>$\text{Total Operational Up-hours} / \text{Number of Failures}$</td>
+                            <td>&gt; 200 hours</td>
+                            <td>&lt; 24 hours</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><strong>Mutation Score % (MS)</strong></td>
+                            <td>PIT / Stryker</td>
+                            <td>$\text{Killed Mutants} / \text{Total Generated Mutants} \times 100\%$</td>
+                            <td>&gt; 70%</td>
+                            <td>&lt; 35%</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><strong>Test Execution Time (TET)</strong></td>
+                            <td>CI Runner Logs</td>
+                            <td>Total clock time in seconds to execute automated suite.</td>
+                            <td>&lt; 5 seconds</td>
+                            <td>&gt; 60 seconds</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><strong>Flaky Test Rate % (FTR)</strong></td>
+                            <td>DeFlaker / BuildPulse</td>
+                            <td>$\text{Non-deterministic Test Runs} / \text{Total Runs} \times 100\%$</td>
+                            <td>&lt; 2%</td>
+                            <td>&gt; 10%</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><strong>Regression Coverage % (RC)</strong></td>
+                            <td>TestRail / Allure</td>
+                            <td>$\text{Historical Bug Verification Tests Executed} / \text{Total Bug Suite} \times 100\%$</td>
+                            <td>&gt; 85%</td>
+                            <td>&lt; 50%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 7. Famous Scenarios for Understanding -->
+        <section>
+            <h2 class="sec-heading"><i class="fa-solid fa-flask"></i> 7. Canonical Benchmark Scenarios for Understanding</h2>
+
+            <p>
+                To understand the diagnostic power of the Hybrid AI framework, examine how it evaluates five distinct software archetypes:
+            </p>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>Inputs Summary</th>
+                            <th>Static NN</th>
+                            <th>Dynamic GBM</th>
+                            <th>Synergy</th>
+                            <th>Defect Prob</th>
+                            <th>Quality Score</th>
+                            <th>Risk Verdict</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #fef2f2;">
+                            <td><strong>1. Worst-Case Critical Module</strong></td>
+                            <td>CC=80, BC=5%, MI=0, MTBF=1h, DD=15</td>
+                            <td>0.750</td>
+                            <td>0.812</td>
+                            <td>+0.372</td>
+                            <td><strong>99.0%</strong></td>
+                            <td><strong style="color: #dc2626;">1 / 100</strong></td>
+                            <td><span class="badge badge-crit">Critical</span></td>
+                        </tr>
+                        <tr style="background: #fffbeb;">
+                            <td><strong>2. Superficial Coverage Trap</strong></td>
+                            <td>SC=94%, BC=32%, MS=22%, CC=34</td>
+                            <td>0.482</td>
+                            <td>0.240</td>
+                            <td>+0.222</td>
+                            <td><strong>56.4%</strong></td>
+                            <td><strong style="color: #d97706;">44 / 100</strong></td>
+                            <td><span class="badge badge-high">High</span></td>
+                        </tr>
+                        <tr style="background: #fef2f2;">
+                            <td><strong>3. Legacy Spaghetti Monolith</strong></td>
+                            <td>LOC=4.2k, CC=58, CBO=31, BC=18%</td>
+                            <td>0.710</td>
+                            <td>0.680</td>
+                            <td>+0.128</td>
+                            <td><strong>82.1%</strong></td>
+                            <td><strong style="color: #dc2626;">18 / 100</strong></td>
+                            <td><span class="badge badge-crit">Critical</span></td>
+                        </tr>
+                        <tr style="background: #fffbeb;">
+                            <td><strong>4. Flaky Pipeline Disaster</strong></td>
+                            <td>FTR=26%, MTBF=35h, CC=8, MS=68%</td>
+                            <td>0.180</td>
+                            <td>0.520</td>
+                            <td>+0.064</td>
+                            <td><strong>44.2%</strong></td>
+                            <td><strong style="color: #d97706;">56 / 100</strong></td>
+                            <td><span class="badge badge-high">High</span></td>
+                        </tr>
+                        <tr style="background: #f0fdf4;">
+                            <td><strong>5. Clean Microservice</strong></td>
+                            <td>CC=4, BC=91%, MS=89%, MI=88</td>
+                            <td>0.105</td>
+                            <td>0.082</td>
+                            <td>&minus;0.057</td>
+                            <td><strong>6.9%</strong></td>
+                            <td><strong style="color: #059669;">93 / 100</strong></td>
+                            <td><span class="badge badge-low">Low</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-heading">7.1 Why the "Superficial Coverage Trap" is the Most Dangerous Bug</h3>
+            <p>
+                In <strong>Scenario 2</strong>, legacy automated testing tools like JaCoCo report <strong>94% Statement Coverage</strong>. Most CI/CD pipelines have a quality gate requiring &gt; 80% coverage, so standard tools approve the pull request with a green checkmark!
+            </p>
+            <div class="callout callout-danger">
+                <strong>How the Hybrid AI Unmasks the Trap:</strong>
+                <br>1. The dynamic gradient boosting tree notices Branch Coverage is only 32% (Tree 1 splits at 60%).
+                <br>2. PIT mutation score is only 22% (Tree 2 splits at 50%), proving tests don't have assertion strength.
+                <br>3. The Cross-Feature Core triggers $\Omega_1 = (CC/80) \times (1 - BC/100) = +0.043$ and $\Omega_3 = (CBO/40) \times (1 - MS/100) = +0.027$.
+                <br>4. Result: Instead of approving a false-safe build, the system flags <strong>Quality Score: 44, High Risk</strong>, and blocks deployment until negative condition tests are committed.
+            </div>
+        </section>
+
+        <!-- 8. CI/CD Integration & How to Run -->
+        <section>
+            <h2 class="sec-heading"><i class="fa-solid fa-code-branch"></i> 8. CI/CD Pipeline Integration &amp; Operational Usage</h2>
+
+            <p>
+                The framework was designed for seamless integration into enterprise GitHub Actions or GitLab CI workflows. Below is the reference pipeline configuration:
+            </p>
+
+            <pre class="code-block"><code>name: HybridQA Quality Gate
+on: [pull_request]
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract Static Metrics
+        run: npx sonarqube-scanner -Dsonar.sources=. --output=static_metrics.json
+      - name: Execute Tests &amp; Mutation Analysis
+        run: |
+          npm test -- --coverage --coverageReporters="json-summary"
+          npx stryker run --reporters json
+      - name: Run HybridQA Inference
+        run: node scripts/hybrid-qa-predict.js --static=static_metrics.json --dynamic=coverage.json
+      - name: Evaluate Quality Gate
+        run: |
+          # Fails build if Quality Score &lt; 65 or Risk == Critical
+          node scripts/verify-gate.js --threshold=65</code></pre>
+
+            <h3 class="sub-heading">8.1 How to Run This Project Locally</h3>
+            <p>
+                The project requires no complex compilers or database servers:
+            </p>
+            <ol style="padding-left: 24px; margin-bottom: 16px;">
+                <li><strong>Using Python HTTP Server (Recommended):</strong>
+                    <pre class="code-block" style="margin: 6px 0;">python -m http.server 8080</pre>
+                    Then open your browser to:
+                    <br>&bull; Interactive Dashboard: <strong><a href="http://localhost:8080" target="_blank">http://localhost:8080</a></strong>
+                    <br>&bull; Research Term Paper: <strong><a href="http://localhost:8080/term-paper.html" target="_blank">http://localhost:8080/term-paper.html</a></strong>
+                    <br>&bull; System Guide &amp; Manual: <strong><a href="http://localhost:8080/system-guide.html" target="_blank">http://localhost:8080/system-guide.html</a></strong>
+                </li>
+                <li><strong>Direct File Execution:</strong>
+                    Simply double-click <code>index.html</code> in your Windows File Explorer. All logic runs in client-side vanilla JavaScript without external backend dependencies.
+                </li>
+            </ol>
+        </section>
+
+    </div>
+</body>
+</html>

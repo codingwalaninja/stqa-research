@@ -1,0 +1,1602 @@
+[
+  {
+    "id": 1,
+    "name": "AuthService",
+    "static": {
+      "loc": 2254,
+      "cyclomaticComplexity": 31,
+      "halsteadVolume": 6908,
+      "maintainabilityIndex": 61,
+      "codeDuplication": 9,
+      "couplingBetweenObjects": 15,
+      "depthOfInheritance": 3,
+      "numberOfMethods": 54,
+      "commentRatio": 19,
+      "codeSmells": 9
+    },
+    "dynamic": {
+      "statementCoverage": 68,
+      "branchCoverage": 59,
+      "testPassRate": 86,
+      "defectDensity": 3.25,
+      "mtbf": 205,
+      "mutationScore": 56,
+      "testExecutionTime": 2129,
+      "flakyTestRate": 5,
+      "regressionCoverage": 68
+    },
+    "actual": {
+      "defectProbability": 0.3609,
+      "qualityScore": 65,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 2,
+    "name": "UserController",
+    "static": {
+      "loc": 2475,
+      "cyclomaticComplexity": 29,
+      "halsteadVolume": 6260,
+      "maintainabilityIndex": 55,
+      "codeDuplication": 12,
+      "couplingBetweenObjects": 12,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 58,
+      "commentRatio": 17,
+      "codeSmells": 15
+    },
+    "dynamic": {
+      "statementCoverage": 63,
+      "branchCoverage": 54,
+      "testPassRate": 83,
+      "defectDensity": 4.24,
+      "mtbf": 222,
+      "mutationScore": 50,
+      "testExecutionTime": 2346,
+      "flakyTestRate": 7,
+      "regressionCoverage": 62
+    },
+    "actual": {
+      "defectProbability": 0.4365,
+      "qualityScore": 58,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 3,
+    "name": "PaymentGateway",
+    "static": {
+      "loc": 3256,
+      "cyclomaticComplexity": 59,
+      "halsteadVolume": 16810,
+      "maintainabilityIndex": 28,
+      "codeDuplication": 23,
+      "couplingBetweenObjects": 22,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 69,
+      "commentRatio": 6,
+      "codeSmells": 20
+    },
+    "dynamic": {
+      "statementCoverage": 33,
+      "branchCoverage": 23,
+      "testPassRate": 70,
+      "defectDensity": 8.03,
+      "mtbf": 1,
+      "mutationScore": 23,
+      "testExecutionTime": 3124,
+      "flakyTestRate": 12,
+      "regressionCoverage": 33
+    },
+    "actual": {
+      "defectProbability": 0.7571,
+      "qualityScore": 24,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 4,
+    "name": "DatabaseAdapter",
+    "static": {
+      "loc": 2758,
+      "cyclomaticComplexity": 34,
+      "halsteadVolume": 12555,
+      "maintainabilityIndex": 49,
+      "codeDuplication": 14,
+      "couplingBetweenObjects": 12,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 64,
+      "commentRatio": 15,
+      "codeSmells": 18
+    },
+    "dynamic": {
+      "statementCoverage": 54,
+      "branchCoverage": 44,
+      "testPassRate": 80,
+      "defectDensity": 4.82,
+      "mtbf": 196,
+      "mutationScore": 44,
+      "testExecutionTime": 2622,
+      "flakyTestRate": 8,
+      "regressionCoverage": 54
+    },
+    "actual": {
+      "defectProbability": 0.4876,
+      "qualityScore": 49,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 5,
+    "name": "CacheManager",
+    "static": {
+      "loc": 2579,
+      "cyclomaticComplexity": 35,
+      "halsteadVolume": 10528,
+      "maintainabilityIndex": 58,
+      "codeDuplication": 11,
+      "couplingBetweenObjects": 14,
+      "depthOfInheritance": 3,
+      "numberOfMethods": 63,
+      "commentRatio": 19,
+      "codeSmells": 11
+    },
+    "dynamic": {
+      "statementCoverage": 64,
+      "branchCoverage": 53,
+      "testPassRate": 84,
+      "defectDensity": 3.81,
+      "mtbf": 213,
+      "mutationScore": 56,
+      "testExecutionTime": 2439,
+      "flakyTestRate": 6,
+      "regressionCoverage": 64
+    },
+    "actual": {
+      "defectProbability": 0.3882,
+      "qualityScore": 60,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 6,
+    "name": "NotificationEngine",
+    "static": {
+      "loc": 3600,
+      "cyclomaticComplexity": 57,
+      "halsteadVolume": 13077,
+      "maintainabilityIndex": 22,
+      "codeDuplication": 25,
+      "couplingBetweenObjects": 18,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 77,
+      "commentRatio": 4,
+      "codeSmells": 27
+    },
+    "dynamic": {
+      "statementCoverage": 29,
+      "branchCoverage": 18,
+      "testPassRate": 66,
+      "defectDensity": 8.8,
+      "mtbf": 1,
+      "mutationScore": 19,
+      "testExecutionTime": 3456,
+      "flakyTestRate": 14,
+      "regressionCoverage": 28
+    },
+    "actual": {
+      "defectProbability": 0.8138,
+      "qualityScore": 18,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 7,
+    "name": "SearchIndexer",
+    "static": {
+      "loc": 3022,
+      "cyclomaticComplexity": 45,
+      "halsteadVolume": 9425,
+      "maintainabilityIndex": 46,
+      "codeDuplication": 15,
+      "couplingBetweenObjects": 16,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 71,
+      "commentRatio": 14,
+      "codeSmells": 16
+    },
+    "dynamic": {
+      "statementCoverage": 53,
+      "branchCoverage": 44,
+      "testPassRate": 79,
+      "defectDensity": 5.19,
+      "mtbf": 147,
+      "mutationScore": 43,
+      "testExecutionTime": 2874,
+      "flakyTestRate": 8,
+      "regressionCoverage": 53
+    },
+    "actual": {
+      "defectProbability": 0.5393,
+      "qualityScore": 46,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 8,
+    "name": "FileUploader",
+    "static": {
+      "loc": 2923,
+      "cyclomaticComplexity": 33,
+      "halsteadVolume": 7460,
+      "maintainabilityIndex": 52,
+      "codeDuplication": 13,
+      "couplingBetweenObjects": 10,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 71,
+      "commentRatio": 17,
+      "codeSmells": 18
+    },
+    "dynamic": {
+      "statementCoverage": 60,
+      "branchCoverage": 51,
+      "testPassRate": 82,
+      "defectDensity": 4.58,
+      "mtbf": 144,
+      "mutationScore": 49,
+      "testExecutionTime": 2772,
+      "flakyTestRate": 8,
+      "regressionCoverage": 59
+    },
+    "actual": {
+      "defectProbability": 0.4749,
+      "qualityScore": 54,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 9,
+    "name": "SessionHandler",
+    "static": {
+      "loc": 2664,
+      "cyclomaticComplexity": 31,
+      "halsteadVolume": 13491,
+      "maintainabilityIndex": 64,
+      "codeDuplication": 8,
+      "couplingBetweenObjects": 11,
+      "depthOfInheritance": 3,
+      "numberOfMethods": 49,
+      "commentRatio": 22,
+      "codeSmells": 10
+    },
+    "dynamic": {
+      "statementCoverage": 69,
+      "branchCoverage": 59,
+      "testPassRate": 87,
+      "defectDensity": 3.18,
+      "mtbf": 281,
+      "mutationScore": 61,
+      "testExecutionTime": 2509,
+      "flakyTestRate": 5,
+      "regressionCoverage": 69
+    },
+    "actual": {
+      "defectProbability": 0.3105,
+      "qualityScore": 68,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 10,
+    "name": "LoggingMiddleware",
+    "static": {
+      "loc": 3366,
+      "cyclomaticComplexity": 43,
+      "halsteadVolume": 15458,
+      "maintainabilityIndex": 40,
+      "codeDuplication": 18,
+      "couplingBetweenObjects": 20,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 59,
+      "commentRatio": 12,
+      "codeSmells": 23
+    },
+    "dynamic": {
+      "statementCoverage": 45,
+      "branchCoverage": 35,
+      "testPassRate": 75,
+      "defectDensity": 5.97,
+      "mtbf": 78,
+      "mutationScore": 37,
+      "testExecutionTime": 3207,
+      "flakyTestRate": 10,
+      "regressionCoverage": 45
+    },
+    "actual": {
+      "defectProbability": 0.596,
+      "qualityScore": 40,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 11,
+    "name": "APIRouter",
+    "static": {
+      "loc": 3347,
+      "cyclomaticComplexity": 48,
+      "halsteadVolume": 13819,
+      "maintainabilityIndex": 43,
+      "codeDuplication": 17,
+      "couplingBetweenObjects": 15,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 60,
+      "commentRatio": 13,
+      "codeSmells": 18
+    },
+    "dynamic": {
+      "statementCoverage": 49,
+      "branchCoverage": 39,
+      "testPassRate": 78,
+      "defectDensity": 5.76,
+      "mtbf": 155,
+      "mutationScore": 40,
+      "testExecutionTime": 3185,
+      "flakyTestRate": 9,
+      "regressionCoverage": 49
+    },
+    "actual": {
+      "defectProbability": 0.5666,
+      "qualityScore": 44,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 12,
+    "name": "DataValidator",
+    "static": {
+      "loc": 3728,
+      "cyclomaticComplexity": 51,
+      "halsteadVolume": 13498,
+      "maintainabilityIndex": 31,
+      "codeDuplication": 21,
+      "couplingBetweenObjects": 21,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 66,
+      "commentRatio": 9,
+      "codeSmells": 18
+    },
+    "dynamic": {
+      "statementCoverage": 38,
+      "branchCoverage": 27,
+      "testPassRate": 71,
+      "defectDensity": 7.55,
+      "mtbf": 32,
+      "mutationScore": 28,
+      "testExecutionTime": 3562,
+      "flakyTestRate": 12,
+      "regressionCoverage": 37
+    },
+    "actual": {
+      "defectProbability": 0.7122,
+      "qualityScore": 30,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 13,
+    "name": "EmailService",
+    "static": {
+      "loc": 3150,
+      "cyclomaticComplexity": 39,
+      "halsteadVolume": 9765,
+      "maintainabilityIndex": 55,
+      "codeDuplication": 12,
+      "couplingBetweenObjects": 11,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 60,
+      "commentRatio": 18,
+      "codeSmells": 15
+    },
+    "dynamic": {
+      "statementCoverage": 62,
+      "branchCoverage": 51,
+      "testPassRate": 83,
+      "defectDensity": 3.94,
+      "mtbf": 150,
+      "mutationScore": 51,
+      "testExecutionTime": 2980,
+      "flakyTestRate": 7,
+      "regressionCoverage": 62
+    },
+    "actual": {
+      "defectProbability": 0.4377,
+      "qualityScore": 58,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 14,
+    "name": "TokenManager",
+    "static": {
+      "loc": 3051,
+      "cyclomaticComplexity": 27,
+      "halsteadVolume": 7733,
+      "maintainabilityIndex": 61,
+      "codeDuplication": 9,
+      "couplingBetweenObjects": 13,
+      "depthOfInheritance": 3,
+      "numberOfMethods": 60,
+      "commentRatio": 21,
+      "codeSmells": 9
+    },
+    "dynamic": {
+      "statementCoverage": 69,
+      "branchCoverage": 60,
+      "testPassRate": 85,
+      "defectDensity": 3.33,
+      "mtbf": 247,
+      "mutationScore": 57,
+      "testExecutionTime": 2378,
+      "flakyTestRate": 6,
+      "regressionCoverage": 68
+    },
+    "actual": {
+      "defectProbability": 0.3433,
+      "qualityScore": 66,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 15,
+    "name": "RateLimiter",
+    "static": {
+      "loc": 4072,
+      "cyclomaticComplexity": 64,
+      "halsteadVolume": 21081,
+      "maintainabilityIndex": 25,
+      "codeDuplication": 24,
+      "couplingBetweenObjects": 17,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 74,
+      "commentRatio": 7,
+      "codeSmells": 25
+    },
+    "dynamic": {
+      "statementCoverage": 30,
+      "branchCoverage": 20,
+      "testPassRate": 69,
+      "defectDensity": 8.32,
+      "mtbf": 1,
+      "mutationScore": 21,
+      "testExecutionTime": 3395,
+      "flakyTestRate": 13,
+      "regressionCoverage": 30
+    },
+    "actual": {
+      "defectProbability": 0.7689,
+      "qualityScore": 21,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 16,
+    "name": "WebSocketHandler",
+    "static": {
+      "loc": 4294,
+      "cyclomaticComplexity": 62,
+      "halsteadVolume": 19996,
+      "maintainabilityIndex": 19,
+      "codeDuplication": 26,
+      "couplingBetweenObjects": 22,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 78,
+      "commentRatio": 2,
+      "codeSmells": 23
+    },
+    "dynamic": {
+      "statementCoverage": 24,
+      "branchCoverage": 14,
+      "testPassRate": 65,
+      "defectDensity": 8.71,
+      "mtbf": 1,
+      "mutationScore": 15,
+      "testExecutionTime": 3613,
+      "flakyTestRate": 13,
+      "regressionCoverage": 24
+    },
+    "actual": {
+      "defectProbability": 0.8444,
+      "qualityScore": 15,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 17,
+    "name": "ConfigLoader",
+    "static": {
+      "loc": 3315,
+      "cyclomaticComplexity": 22,
+      "halsteadVolume": 13280,
+      "maintainabilityIndex": 58,
+      "codeDuplication": 10,
+      "couplingBetweenObjects": 9,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 67,
+      "commentRatio": 18,
+      "codeSmells": 15
+    },
+    "dynamic": {
+      "statementCoverage": 64,
+      "branchCoverage": 54,
+      "testPassRate": 84,
+      "defectDensity": 3.7,
+      "mtbf": 198,
+      "mutationScore": 54,
+      "testExecutionTime": 2631,
+      "flakyTestRate": 6,
+      "regressionCoverage": 64
+    },
+    "actual": {
+      "defectProbability": 0.395,
+      "qualityScore": 60,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 18,
+    "name": "ErrorHandler",
+    "static": {
+      "loc": 4016,
+      "cyclomaticComplexity": 50,
+      "halsteadVolume": 14568,
+      "maintainabilityIndex": 34,
+      "codeDuplication": 20,
+      "couplingBetweenObjects": 18,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 77,
+      "commentRatio": 8,
+      "codeSmells": 19
+    },
+    "dynamic": {
+      "statementCoverage": 41,
+      "branchCoverage": 30,
+      "testPassRate": 73,
+      "defectDensity": 7.1,
+      "mtbf": 95,
+      "mutationScore": 30,
+      "testExecutionTime": 3328,
+      "flakyTestRate": 10,
+      "regressionCoverage": 40
+    },
+    "actual": {
+      "defectProbability": 0.6806,
+      "qualityScore": 33,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 19,
+    "name": "MetricsCollector",
+    "static": {
+      "loc": 3598,
+      "cyclomaticComplexity": 28,
+      "halsteadVolume": 10935,
+      "maintainabilityIndex": 52,
+      "codeDuplication": 13,
+      "couplingBetweenObjects": 17,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 73,
+      "commentRatio": 16,
+      "codeSmells": 17
+    },
+    "dynamic": {
+      "statementCoverage": 59,
+      "branchCoverage": 48,
+      "testPassRate": 82,
+      "defectDensity": 4.29,
+      "mtbf": 172,
+      "mutationScore": 48,
+      "testExecutionTime": 2906,
+      "flakyTestRate": 7,
+      "regressionCoverage": 59
+    },
+    "actual": {
+      "defectProbability": 0.4461,
+      "qualityScore": 54,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 20,
+    "name": "TaskScheduler",
+    "static": {
+      "loc": 3819,
+      "cyclomaticComplexity": 41,
+      "halsteadVolume": 9943,
+      "maintainabilityIndex": 46,
+      "codeDuplication": 15,
+      "couplingBetweenObjects": 14,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 78,
+      "commentRatio": 13,
+      "codeSmells": 16
+    },
+    "dynamic": {
+      "statementCoverage": 54,
+      "branchCoverage": 45,
+      "testPassRate": 79,
+      "defectDensity": 5.28,
+      "mtbf": 89,
+      "mutationScore": 42,
+      "testExecutionTime": 3124,
+      "flakyTestRate": 8,
+      "regressionCoverage": 53
+    },
+    "actual": {
+      "defectProbability": 0.5217,
+      "qualityScore": 47,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 21,
+    "name": "ImageProcessor",
+    "static": {
+      "loc": 3800,
+      "cyclomaticComplexity": 31,
+      "halsteadVolume": 19217,
+      "maintainabilityIndex": 49,
+      "codeDuplication": 14,
+      "couplingBetweenObjects": 17,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 79,
+      "commentRatio": 15,
+      "codeSmells": 19
+    },
+    "dynamic": {
+      "statementCoverage": 54,
+      "branchCoverage": 45,
+      "testPassRate": 80,
+      "defectDensity": 5.07,
+      "mtbf": 166,
+      "mutationScore": 44,
+      "testExecutionTime": 3101,
+      "flakyTestRate": 8,
+      "regressionCoverage": 57
+    },
+    "actual": {
+      "defectProbability": 0.4923,
+      "qualityScore": 51,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 22,
+    "name": "ReportGenerator",
+    "static": {
+      "loc": 4676,
+      "cyclomaticComplexity": 64,
+      "halsteadVolume": 21851,
+      "maintainabilityIndex": 18,
+      "codeDuplication": 26,
+      "couplingBetweenObjects": 20,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 91,
+      "commentRatio": 3,
+      "codeSmells": 26
+    },
+    "dynamic": {
+      "statementCoverage": 24,
+      "branchCoverage": 14,
+      "testPassRate": 66,
+      "defectDensity": 8.73,
+      "mtbf": 1,
+      "mutationScore": 14,
+      "testExecutionTime": 3974,
+      "flakyTestRate": 14,
+      "regressionCoverage": 24
+    },
+    "actual": {
+      "defectProbability": 0.8542,
+      "qualityScore": 15,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 23,
+    "name": "AuditLogger",
+    "static": {
+      "loc": 4163,
+      "cyclomaticComplexity": 39,
+      "halsteadVolume": 17034,
+      "maintainabilityIndex": 40,
+      "codeDuplication": 18,
+      "couplingBetweenObjects": 18,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 86,
+      "commentRatio": 11,
+      "codeSmells": 23
+    },
+    "dynamic": {
+      "statementCoverage": 46,
+      "branchCoverage": 36,
+      "testPassRate": 76,
+      "defectDensity": 6.05,
+      "mtbf": 120,
+      "mutationScore": 35,
+      "testExecutionTime": 3457,
+      "flakyTestRate": 10,
+      "regressionCoverage": 46
+    },
+    "actual": {
+      "defectProbability": 0.6084,
+      "qualityScore": 41,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 24,
+    "name": "EncryptionUtils",
+    "static": {
+      "loc": 584,
+      "cyclomaticComplexity": 27,
+      "halsteadVolume": 2531,
+      "maintainabilityIndex": 64,
+      "codeDuplication": 8,
+      "couplingBetweenObjects": 8,
+      "depthOfInheritance": 3,
+      "numberOfMethods": 42,
+      "commentRatio": 21,
+      "codeSmells": 11
+    },
+    "dynamic": {
+      "statementCoverage": 71,
+      "branchCoverage": 60,
+      "testPassRate": 88,
+      "defectDensity": 3.04,
+      "mtbf": 237,
+      "mutationScore": 62,
+      "testExecutionTime": 1374,
+      "flakyTestRate": 5,
+      "regressionCoverage": 70
+    },
+    "actual": {
+      "defectProbability": 0.304,
+      "qualityScore": 69,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 25,
+    "name": "QueueManager",
+    "static": {
+      "loc": 1606,
+      "cyclomaticComplexity": 49,
+      "halsteadVolume": 5661,
+      "maintainabilityIndex": 28,
+      "codeDuplication": 22,
+      "couplingBetweenObjects": 20,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 36,
+      "commentRatio": 7,
+      "codeSmells": 19
+    },
+    "dynamic": {
+      "statementCoverage": 35,
+      "branchCoverage": 24,
+      "testPassRate": 69,
+      "defectDensity": 7.43,
+      "mtbf": 54,
+      "mutationScore": 26,
+      "testExecutionTime": 2392,
+      "flakyTestRate": 12,
+      "regressionCoverage": 35
+    },
+    "actual": {
+      "defectProbability": 0.7296,
+      "qualityScore": 27,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 26,
+    "name": "GraphQLResolver",
+    "static": {
+      "loc": 947,
+      "cyclomaticComplexity": 35,
+      "halsteadVolume": 2992,
+      "maintainabilityIndex": 55,
+      "codeDuplication": 11,
+      "couplingBetweenObjects": 9,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 29,
+      "commentRatio": 18,
+      "codeSmells": 15
+    },
+    "dynamic": {
+      "statementCoverage": 63,
+      "branchCoverage": 54,
+      "testPassRate": 84,
+      "defectDensity": 4.02,
+      "mtbf": 191,
+      "mutationScore": 53,
+      "testExecutionTime": 1730,
+      "flakyTestRate": 6,
+      "regressionCoverage": 62
+    },
+    "actual": {
+      "defectProbability": 0.4201,
+      "qualityScore": 57,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 27,
+    "name": "CronJobRunner",
+    "static": {
+      "loc": 1329,
+      "cyclomaticComplexity": 37,
+      "halsteadVolume": 7286,
+      "maintainabilityIndex": 43,
+      "codeDuplication": 16,
+      "couplingBetweenObjects": 16,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 35,
+      "commentRatio": 13,
+      "codeSmells": 15
+    },
+    "dynamic": {
+      "statementCoverage": 51,
+      "branchCoverage": 42,
+      "testPassRate": 77,
+      "defectDensity": 5.82,
+      "mtbf": 68,
+      "mutationScore": 41,
+      "testExecutionTime": 2108,
+      "flakyTestRate": 9,
+      "regressionCoverage": 51
+    },
+    "actual": {
+      "defectProbability": 0.5657,
+      "qualityScore": 43,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 28,
+    "name": "HealthChecker",
+    "static": {
+      "loc": 1950,
+      "cyclomaticComplexity": 63,
+      "halsteadVolume": 9899,
+      "maintainabilityIndex": 22,
+      "codeDuplication": 25,
+      "couplingBetweenObjects": 24,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 44,
+      "commentRatio": 5,
+      "codeSmells": 26
+    },
+    "dynamic": {
+      "statementCoverage": 27,
+      "branchCoverage": 17,
+      "testPassRate": 67,
+      "defectDensity": 8.81,
+      "mtbf": 1,
+      "mutationScore": 20,
+      "testExecutionTime": 2725,
+      "flakyTestRate": 13,
+      "regressionCoverage": 27
+    },
+    "actual": {
+      "defectProbability": 0.8163,
+      "qualityScore": 19,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 29,
+    "name": "MigrationRunner",
+    "static": {
+      "loc": 971,
+      "cyclomaticComplexity": 23,
+      "halsteadVolume": 4282,
+      "maintainabilityIndex": 61,
+      "codeDuplication": 9,
+      "couplingBetweenObjects": 11,
+      "depthOfInheritance": 3,
+      "numberOfMethods": 33,
+      "commentRatio": 21,
+      "codeSmells": 10
+    },
+    "dynamic": {
+      "statementCoverage": 67,
+      "branchCoverage": 57,
+      "testPassRate": 86,
+      "defectDensity": 3.2,
+      "mtbf": 203,
+      "mutationScore": 58,
+      "testExecutionTime": 1743,
+      "flakyTestRate": 6,
+      "regressionCoverage": 67
+    },
+    "actual": {
+      "defectProbability": 0.3368,
+      "qualityScore": 64,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 30,
+    "name": "TemplateEngine",
+    "static": {
+      "loc": 1673,
+      "cyclomaticComplexity": 51,
+      "halsteadVolume": 6777,
+      "maintainabilityIndex": 37,
+      "codeDuplication": 19,
+      "couplingBetweenObjects": 20,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 43,
+      "commentRatio": 11,
+      "codeSmells": 22
+    },
+    "dynamic": {
+      "statementCoverage": 44,
+      "branchCoverage": 34,
+      "testPassRate": 75,
+      "defectDensity": 6.59,
+      "mtbf": 100,
+      "mutationScore": 34,
+      "testExecutionTime": 2441,
+      "flakyTestRate": 10,
+      "regressionCoverage": 43
+    },
+    "actual": {
+      "defectProbability": 0.6224,
+      "qualityScore": 37,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 31,
+    "name": "PermissionGuard",
+    "static": {
+      "loc": 1894,
+      "cyclomaticComplexity": 48,
+      "halsteadVolume": 6540,
+      "maintainabilityIndex": 31,
+      "codeDuplication": 21,
+      "couplingBetweenObjects": 17,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 47,
+      "commentRatio": 9,
+      "codeSmells": 20
+    },
+    "dynamic": {
+      "statementCoverage": 38,
+      "branchCoverage": 27,
+      "testPassRate": 71,
+      "defectDensity": 7.58,
+      "mtbf": 17,
+      "mutationScore": 28,
+      "testExecutionTime": 2658,
+      "flakyTestRate": 12,
+      "regressionCoverage": 38
+    },
+    "actual": {
+      "defectProbability": 0.698,
+      "qualityScore": 30,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 32,
+    "name": "ResponseFormatter",
+    "static": {
+      "loc": 1395,
+      "cyclomaticComplexity": 39,
+      "halsteadVolume": 4199,
+      "maintainabilityIndex": 52,
+      "codeDuplication": 13,
+      "couplingBetweenObjects": 15,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 42,
+      "commentRatio": 17,
+      "codeSmells": 17
+    },
+    "dynamic": {
+      "statementCoverage": 60,
+      "branchCoverage": 49,
+      "testPassRate": 82,
+      "defectDensity": 4.37,
+      "mtbf": 214,
+      "mutationScore": 49,
+      "testExecutionTime": 1656,
+      "flakyTestRate": 7,
+      "regressionCoverage": 59
+    },
+    "actual": {
+      "defectProbability": 0.4585,
+      "qualityScore": 55,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 33,
+    "name": "RequestParser",
+    "static": {
+      "loc": 2359,
+      "cyclomaticComplexity": 60,
+      "halsteadVolume": 12892,
+      "maintainabilityIndex": 18,
+      "codeDuplication": 26,
+      "couplingBetweenObjects": 19,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 56,
+      "commentRatio": 4,
+      "codeSmells": 25
+    },
+    "dynamic": {
+      "statementCoverage": 27,
+      "branchCoverage": 18,
+      "testPassRate": 64,
+      "defectDensity": 9.07,
+      "mtbf": 1,
+      "mutationScore": 15,
+      "testExecutionTime": 2616,
+      "flakyTestRate": 15,
+      "regressionCoverage": 26
+    },
+    "actual": {
+      "defectProbability": 0.8588,
+      "qualityScore": 15,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 34,
+    "name": "CircuitBreaker",
+    "static": {
+      "loc": 1678,
+      "cyclomaticComplexity": 44,
+      "halsteadVolume": 8367,
+      "maintainabilityIndex": 46,
+      "codeDuplication": 15,
+      "couplingBetweenObjects": 16,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 49,
+      "commentRatio": 13,
+      "codeSmells": 20
+    },
+    "dynamic": {
+      "statementCoverage": 51,
+      "branchCoverage": 41,
+      "testPassRate": 79,
+      "defectDensity": 5.55,
+      "mtbf": 88,
+      "mutationScore": 43,
+      "testExecutionTime": 1931,
+      "flakyTestRate": 8,
+      "regressionCoverage": 51
+    },
+    "actual": {
+      "defectProbability": 0.5397,
+      "qualityScore": 48,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 35,
+    "name": "RetryHandler",
+    "static": {
+      "loc": 1419,
+      "cyclomaticComplexity": 27,
+      "halsteadVolume": 6169,
+      "maintainabilityIndex": 58,
+      "codeDuplication": 10,
+      "couplingBetweenObjects": 9,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 47,
+      "commentRatio": 18,
+      "codeSmells": 12
+    },
+    "dynamic": {
+      "statementCoverage": 64,
+      "branchCoverage": 54,
+      "testPassRate": 85,
+      "defectDensity": 3.54,
+      "mtbf": 225,
+      "mutationScore": 55,
+      "testExecutionTime": 1668,
+      "flakyTestRate": 5,
+      "regressionCoverage": 64
+    },
+    "actual": {
+      "defectProbability": 0.3752,
+      "qualityScore": 62,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 36,
+    "name": "DataSerializer",
+    "static": {
+      "loc": 1961,
+      "cyclomaticComplexity": 50,
+      "halsteadVolume": 7809,
+      "maintainabilityIndex": 44,
+      "codeDuplication": 17,
+      "couplingBetweenObjects": 16,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 55,
+      "commentRatio": 11,
+      "codeSmells": 23
+    },
+    "dynamic": {
+      "statementCoverage": 47,
+      "branchCoverage": 37,
+      "testPassRate": 76,
+      "defectDensity": 6.14,
+      "mtbf": 62,
+      "mutationScore": 36,
+      "testExecutionTime": 2206,
+      "flakyTestRate": 10,
+      "regressionCoverage": 46
+    },
+    "actual": {
+      "defectProbability": 0.5908,
+      "qualityScore": 42,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 37,
+    "name": "EventEmitter",
+    "static": {
+      "loc": 2422,
+      "cyclomaticComplexity": 55,
+      "halsteadVolume": 8311,
+      "maintainabilityIndex": 29,
+      "codeDuplication": 23,
+      "couplingBetweenObjects": 23,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 62,
+      "commentRatio": 5,
+      "codeSmells": 24
+    },
+    "dynamic": {
+      "statementCoverage": 32,
+      "branchCoverage": 21,
+      "testPassRate": 69,
+      "defectDensity": 8.33,
+      "mtbf": 19,
+      "mutationScore": 21,
+      "testExecutionTime": 2664,
+      "flakyTestRate": 12,
+      "regressionCoverage": 32
+    },
+    "actual": {
+      "defectProbability": 0.7714,
+      "qualityScore": 22,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 38,
+    "name": "PluginLoader",
+    "static": {
+      "loc": 1683,
+      "cyclomaticComplexity": 38,
+      "halsteadVolume": 4938,
+      "maintainabilityIndex": 59,
+      "codeDuplication": 11,
+      "couplingBetweenObjects": 12,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 54,
+      "commentRatio": 17,
+      "codeSmells": 10
+    },
+    "dynamic": {
+      "statementCoverage": 63,
+      "branchCoverage": 52,
+      "testPassRate": 84,
+      "defectDensity": 3.92,
+      "mtbf": 176,
+      "mutationScore": 51,
+      "testExecutionTime": 1921,
+      "flakyTestRate": 7,
+      "regressionCoverage": 62
+    },
+    "actual": {
+      "defectProbability": 0.4269,
+      "qualityScore": 57,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 39,
+    "name": "ThemeManager",
+    "static": {
+      "loc": 2305,
+      "cyclomaticComplexity": 48,
+      "halsteadVolume": 12457,
+      "maintainabilityIndex": 38,
+      "codeDuplication": 20,
+      "couplingBetweenObjects": 20,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 63,
+      "commentRatio": 9,
+      "codeSmells": 22
+    },
+    "dynamic": {
+      "statementCoverage": 42,
+      "branchCoverage": 33,
+      "testPassRate": 73,
+      "defectDensity": 6.91,
+      "mtbf": 93,
+      "mutationScore": 30,
+      "testExecutionTime": 2539,
+      "flakyTestRate": 10,
+      "regressionCoverage": 42
+    },
+    "actual": {
+      "defectProbability": 0.6775,
+      "qualityScore": 33,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 40,
+    "name": "LocalizationService",
+    "static": {
+      "loc": 1966,
+      "cyclomaticComplexity": 43,
+      "halsteadVolume": 9693,
+      "maintainabilityIndex": 53,
+      "codeDuplication": 14,
+      "couplingBetweenObjects": 12,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 40,
+      "commentRatio": 15,
+      "codeSmells": 13
+    },
+    "dynamic": {
+      "statementCoverage": 54,
+      "branchCoverage": 45,
+      "testPassRate": 80,
+      "defectDensity": 5.1,
+      "mtbf": 150,
+      "mutationScore": 45,
+      "testExecutionTime": 2197,
+      "flakyTestRate": 8,
+      "regressionCoverage": 57
+    },
+    "actual": {
+      "defectProbability": 0.4781,
+      "qualityScore": 51,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 41,
+    "name": "AnalyticsDashboard",
+    "static": {
+      "loc": 1627,
+      "cyclomaticComplexity": 23,
+      "halsteadVolume": 6965,
+      "maintainabilityIndex": 68,
+      "codeDuplication": 8,
+      "couplingBetweenObjects": 13,
+      "depthOfInheritance": 3,
+      "numberOfMethods": 37,
+      "commentRatio": 21,
+      "codeSmells": 12
+    },
+    "dynamic": {
+      "statementCoverage": 70,
+      "branchCoverage": 60,
+      "testPassRate": 89,
+      "defectDensity": 2.69,
+      "mtbf": 207,
+      "mutationScore": 60,
+      "testExecutionTime": 1854,
+      "flakyTestRate": 4,
+      "regressionCoverage": 70
+    },
+    "actual": {
+      "defectProbability": 0.3086,
+      "qualityScore": 68,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 42,
+    "name": "ExportService",
+    "static": {
+      "loc": 2889,
+      "cyclomaticComplexity": 69,
+      "halsteadVolume": 11501,
+      "maintainabilityIndex": 23,
+      "codeDuplication": 26,
+      "couplingBetweenObjects": 19,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 54,
+      "commentRatio": 3,
+      "codeSmells": 24
+    },
+    "dynamic": {
+      "statementCoverage": 26,
+      "branchCoverage": 16,
+      "testPassRate": 66,
+      "defectDensity": 8.88,
+      "mtbf": 1,
+      "mutationScore": 15,
+      "testExecutionTime": 3112,
+      "flakyTestRate": 14,
+      "regressionCoverage": 25
+    },
+    "actual": {
+      "defectProbability": 0.8392,
+      "qualityScore": 16,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 43,
+    "name": "ImportParser",
+    "static": {
+      "loc": 2310,
+      "cyclomaticComplexity": 41,
+      "halsteadVolume": 7770,
+      "maintainabilityIndex": 47,
+      "codeDuplication": 16,
+      "couplingBetweenObjects": 17,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 48,
+      "commentRatio": 13,
+      "codeSmells": 20
+    },
+    "dynamic": {
+      "statementCoverage": 50,
+      "branchCoverage": 39,
+      "testPassRate": 77,
+      "defectDensity": 5.87,
+      "mtbf": 81,
+      "mutationScore": 42,
+      "testExecutionTime": 2530,
+      "flakyTestRate": 9,
+      "regressionCoverage": 50
+    },
+    "actual": {
+      "defectProbability": 0.5648,
+      "qualityScore": 44,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 44,
+    "name": "WorkflowEngine",
+    "static": {
+      "loc": 1971,
+      "cyclomaticComplexity": 22,
+      "halsteadVolume": 5394,
+      "maintainabilityIndex": 62,
+      "codeDuplication": 10,
+      "couplingBetweenObjects": 9,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 45,
+      "commentRatio": 19,
+      "codeSmells": 11
+    },
+    "dynamic": {
+      "statementCoverage": 66,
+      "branchCoverage": 55,
+      "testPassRate": 84,
+      "defectDensity": 3.46,
+      "mtbf": 239,
+      "mutationScore": 56,
+      "testExecutionTime": 2187,
+      "flakyTestRate": 6,
+      "regressionCoverage": 65
+    },
+    "actual": {
+      "defectProbability": 0.3953,
+      "qualityScore": 62,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 45,
+    "name": "FormValidator",
+    "static": {
+      "loc": 2833,
+      "cyclomaticComplexity": 54,
+      "halsteadVolume": 6800,
+      "maintainabilityIndex": 32,
+      "codeDuplication": 22,
+      "couplingBetweenObjects": 19,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 57,
+      "commentRatio": 7,
+      "codeSmells": 25
+    },
+    "dynamic": {
+      "statementCoverage": 36,
+      "branchCoverage": 27,
+      "testPassRate": 71,
+      "defectDensity": 7.66,
+      "mtbf": 1,
+      "mutationScore": 26,
+      "testExecutionTime": 3045,
+      "flakyTestRate": 12,
+      "regressionCoverage": 36
+    },
+    "actual": {
+      "defectProbability": 0.7209,
+      "qualityScore": 27,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 46,
+    "name": "PDFGenerator",
+    "static": {
+      "loc": 2254,
+      "cyclomaticComplexity": 27,
+      "halsteadVolume": 10737,
+      "maintainabilityIndex": 56,
+      "codeDuplication": 12,
+      "couplingBetweenObjects": 9,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 51,
+      "commentRatio": 17,
+      "codeSmells": 14
+    },
+    "dynamic": {
+      "statementCoverage": 57,
+      "branchCoverage": 48,
+      "testPassRate": 82,
+      "defectDensity": 4.65,
+      "mtbf": 213,
+      "mutationScore": 50,
+      "testExecutionTime": 2463,
+      "flakyTestRate": 8,
+      "regressionCoverage": 60
+    },
+    "actual": {
+      "defectProbability": 0.4465,
+      "qualityScore": 56,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 47,
+    "name": "ChartRenderer",
+    "static": {
+      "loc": 2475,
+      "cyclomaticComplexity": 40,
+      "halsteadVolume": 10773,
+      "maintainabilityIndex": 50,
+      "codeDuplication": 15,
+      "couplingBetweenObjects": 14,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 55,
+      "commentRatio": 15,
+      "codeSmells": 20
+    },
+    "dynamic": {
+      "statementCoverage": 52,
+      "branchCoverage": 42,
+      "testPassRate": 79,
+      "defectDensity": 5.04,
+      "mtbf": 130,
+      "mutationScore": 44,
+      "testExecutionTime": 2680,
+      "flakyTestRate": 8,
+      "regressionCoverage": 52
+    },
+    "actual": {
+      "defectProbability": 0.522,
+      "qualityScore": 49,
+      "riskLevel": "High"
+    }
+  },
+  {
+    "id": 48,
+    "name": "NavigationManager",
+    "static": {
+      "loc": 2937,
+      "cyclomaticComplexity": 45,
+      "halsteadVolume": 11281,
+      "maintainabilityIndex": 35,
+      "codeDuplication": 21,
+      "couplingBetweenObjects": 21,
+      "depthOfInheritance": 6,
+      "numberOfMethods": 62,
+      "commentRatio": 9,
+      "codeSmells": 21
+    },
+    "dynamic": {
+      "statementCoverage": 38,
+      "branchCoverage": 28,
+      "testPassRate": 71,
+      "defectDensity": 7.23,
+      "mtbf": 87,
+      "mutationScore": 29,
+      "testExecutionTime": 3138,
+      "flakyTestRate": 12,
+      "regressionCoverage": 37
+    },
+    "actual": {
+      "defectProbability": 0.7026,
+      "qualityScore": 32,
+      "riskLevel": "Critical"
+    }
+  },
+  {
+    "id": 49,
+    "name": "StateManager",
+    "static": {
+      "loc": 2198,
+      "cyclomaticComplexity": 28,
+      "halsteadVolume": 7241,
+      "maintainabilityIndex": 65,
+      "codeDuplication": 9,
+      "couplingBetweenObjects": 10,
+      "depthOfInheritance": 4,
+      "numberOfMethods": 54,
+      "commentRatio": 21,
+      "codeSmells": 8
+    },
+    "dynamic": {
+      "statementCoverage": 68,
+      "branchCoverage": 58,
+      "testPassRate": 87,
+      "defectDensity": 3.42,
+      "mtbf": 244,
+      "mutationScore": 59,
+      "testExecutionTime": 2396,
+      "flakyTestRate": 5,
+      "regressionCoverage": 68
+    },
+    "actual": {
+      "defectProbability": 0.3582,
+      "qualityScore": 64,
+      "riskLevel": "Medium"
+    }
+  },
+  {
+    "id": 50,
+    "name": "TestRunner",
+    "static": {
+      "loc": 2899,
+      "cyclomaticComplexity": 41,
+      "halsteadVolume": 8198,
+      "maintainabilityIndex": 41,
+      "codeDuplication": 18,
+      "couplingBetweenObjects": 19,
+      "depthOfInheritance": 5,
+      "numberOfMethods": 64,
+      "commentRatio": 12,
+      "codeSmells": 20
+    },
+    "dynamic": {
+      "statementCoverage": 45,
+      "branchCoverage": 34,
+      "testPassRate": 75,
+      "defectDensity": 6.21,
+      "mtbf": 41,
+      "mutationScore": 35,
+      "testExecutionTime": 2593,
+      "flakyTestRate": 11,
+      "regressionCoverage": 44
+    },
+    "actual": {
+      "defectProbability": 0.6137,
+      "qualityScore": 37,
+      "riskLevel": "Critical"
+    }
+  }
+]

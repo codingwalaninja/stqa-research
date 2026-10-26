@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Hybrid AI Framework combining Neural Networks and Gradient Boosting for software quality prediction using static analysis and dynamic testing metrics.">
+    <meta name="keywords" content="software quality, AI, machine learning, static analysis, dynamic testing, defect prediction, hybrid framework">
+    <meta name="author" content="STQA Research Project">
+    <title>Hybrid AI Framework — Software Quality Prediction</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-brand" onclick="app.navigateTo('dashboard'); return false;">
+            <div class="nav-logo">AI</div>
+            <div>
+                <span class="nav-title">HybridQA</span>
+                <span class="nav-subtitle">Quality Prediction Framework</span>
+            </div>
+        </a>
+
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">☰</button>
+
+        <ul class="nav-links" id="mainNav">
+            <li><a class="nav-link active" data-section="dashboard" href="#">📊 Dashboard</a></li>
+            <li><a class="nav-link" data-section="concepts" href="#">📖 Concepts &amp; Guide</a></li>
+            <li><a class="nav-link" data-section="analysis" href="#">🔬 Analysis &amp; Scenarios</a></li>
+            <li><a class="nav-link" data-section="models" href="#">🧠 ML Models</a></li>
+            <li><a class="nav-link" data-section="dataset" href="#">📁 Dataset (50 Modules)</a></li>
+            <li><a class="nav-link" data-section="results" href="#">📈 Results &amp; Findings</a></li>
+            <li><a class="nav-link" href="term-paper.html" target="_blank">📄 Research Paper (PDF)</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <canvas class="hero-particle-canvas" id="particleCanvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                STQA Innovative Research Assignment · 2026
+            </div>
+            <h1>
+                <span class="gradient-text">Hybrid AI Framework</span><br>
+                for Software Quality Prediction
+            </h1>
+            <p>
+                Unifying <strong>Neural Network</strong>-based static code analysis with 
+                <strong>Gradient Boosting</strong>-driven dynamic testing telemetry through an 
+                attention-weighted ensemble to achieve <strong>93.6% prediction accuracy</strong>.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" onclick="app.navigateTo('analysis')">
+                    🔬 Test Scenarios &amp; Predict
+                </a>
+                <a class="btn btn-secondary" onclick="app.navigateTo('concepts')">
+                    📖 Understand How It Works
+                </a>
+                <a class="btn btn-secondary" href="term-paper.html" target="_blank" style="border-color: #10b981; color: #10b981;">
+                    📄 Read &amp; Download Paper (PDF)
+                </a>
+                <button class="btn btn-secondary" id="btnHeroAuditReport" onclick="app.openAuditModal()">
+                    📑 Generate Audit Report
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FRAMEWORK ARCHITECTURE & INTERACTIVE PIPELINE ============ -->
+    <div class="main-content">
+        <div class="architecture-container">
+            <div class="arch-header">
+                <div>
+                    <h2>Interactive Framework Architecture</h2>
+                    <p style="color: var(--text-secondary); margin-top: 4px; font-size: 13px;">
+                        Click on any stage below to inspect its mathematical formulation, input vectors, and tools
+                    </p>
+                </div>
+                <div class="arch-header-actions">
+                    <button class="btn-pipeline-pulse" id="btnPulsePipeline" onclick="app.animatePipelineFlow()">
+                        ⚡ Animate Data Pipeline Flow
+                    </button>
+                </div>
+            </div>
+
+            <div class="arch-diagram">
+                <div class="arch-block static" data-stage="stage_static" onclick="app.inspectStage('stage_static')">
+                    <div class="arch-block-icon">🔍</div>
+                    <div class="arch-block-title">Stage 1: Static Analyzer</div>
+                    <div class="arch-block-desc">10 structural metrics<br>LOC, CC, Halstead, MI...</div>
+                    <div class="arch-block-hint">Click to inspect ▹</div>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-block static" data-stage="stage_nn" onclick="app.inspectStage('stage_nn')">
+                    <div class="arch-block-icon">🧠</div>
+                    <div class="arch-block-title">Stage 2: Neural Network</div>
+                    <div class="arch-block-desc">10 → 8 → 4 → 1 Feedforward<br>Weight: 42%</div>
+                    <div class="arch-block-hint">Click to inspect ▹</div>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-block hybrid" data-stage="stage_fusion" onclick="app.inspectStage('stage_fusion')">
+                    <div class="arch-block-icon">⚡</div>
+                    <div class="arch-block-title">Stage 5: Attention Fusion</div>
+                    <div class="arch-block-desc">Cross-feature synergy terms<br>&amp; dynamic confidence</div>
+                    <div class="arch-block-hint">Click to inspect ▹</div>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-block output" data-stage="stage_output" onclick="app.inspectStage('stage_output')">
+                    <div class="arch-block-icon">📋</div>
+                    <div class="arch-block-title">Stage 6: Quality Output</div>
+                    <div class="arch-block-desc">Score, Risk, Reliability,<br>&amp; Remediation Plan</div>
+                    <div class="arch-block-hint">Click to inspect ▹</div>
+                </div>
+            </div>
+
+            <div class="arch-diagram" style="margin-top: 10px;">
+                <div class="arch-block dynamic" data-stage="stage_dynamic" onclick="app.inspectStage('stage_dynamic')">
+                    <div class="arch-block-icon">🧪</div>
+                    <div class="arch-block-title">Stage 3: Dynamic Tester</div>
+                    <div class="arch-block-desc">9 runtime metrics<br>Coverage, Mutations, MTBF...</div>
+                    <div class="arch-block-hint">Click to inspect ▹</div>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-block dynamic" data-stage="stage_gbm" onclick="app.inspectStage('stage_gbm')">
+                    <div class="arch-block-icon">🌲</div>
+                    <div class="arch-block-title">Stage 4: Gradient Boosting</div>
+                    <div class="arch-block-desc">8 threshold decision stumps<br>Weight: 58%</div>
+                    <div class="arch-block-hint">Click to inspect ▹</div>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div style="min-width: 210px; visibility: hidden;"></div>
+                <div class="arch-arrow" style="visibility: hidden;">→</div>
+                <div style="min-width: 170px; visibility: hidden;"></div>
+            </div>
+
+            <!-- Stage Inspector Drawer -->
+            <div id="archInspector" class="arch-inspector">
+                <div class="inspector-header">
+                    <div class="inspector-title" id="inspectorTitle">
+                        <span>🔍</span> Stage Details
+                    </div>
+                    <button class="inspector-close" onclick="app.closeInspector()">✕</button>
+                </div>
+                <div class="inspector-body">
+                    <div>
+                        <p id="inspectorDesc" style="color: var(--text-primary); margin-bottom: 12px; font-size: 13px;"></p>
+                        <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px;">Key Mechanisms</h4>
+                        <ul class="inspector-keypoints" id="inspectorPoints"></ul>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px;">Mathematical Formulation</h4>
+                        <div class="inspector-formula-box" id="inspectorFormula"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ DASHBOARD SECTION ============ -->
+        <div class="section active" id="dashboard">
+            <div class="section-header">
+                <h2>📊 Software Quality Overview</h2>
+                <p>Telemetry and prediction performance across 50 production software modules</p>
+            </div>
+
+            <!-- Stat Cards -->
+            <div class="stat-cards">
+                <div class="stat-card">
+                    <div class="stat-label">Avg Quality Score</div>
+                    <div class="stat-value" id="dashAvgQuality">0</div>
+                    <div class="stat-desc">Across all 50 analyzed modules</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Avg Defect Probability</div>
+                    <div class="stat-value" id="dashDefectProb">0%</div>
+                    <div class="stat-desc">Predicted by hybrid ensemble</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">High / Critical Risk</div>
+                    <div class="stat-value" id="dashHighRisk">0</div>
+                    <div class="stat-desc">Modules requiring urgent remediation</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Hybrid Accuracy</div>
+                    <div class="stat-value" id="dashAccuracy">0%</div>
+                    <div class="stat-desc">+12.4% over best single model</div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dash-grid">
+                <div class="card">
+                    <h3>Risk Classification Distribution</h3>
+                    <div id="riskDistribution"></div>
+                </div>
+                <div class="card">
+                    <h3>Top 5 Modules at Risk</h3>
+                    <div id="atRiskModules"></div>
+                </div>
+            </div>
+
+            <div class="dash-grid">
+                <div class="card">
+                    <h4>Metric Profile — Benchmark Module</h4>
+                    <div class="chart-container">
+                        <canvas id="dashRadarChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Quality Score Distribution Histogram</h4>
+                    <div class="chart-container">
+                        <canvas id="dashDistributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ CONCEPTS & GUIDE SECTION ============ -->
+        <div class="section" id="concepts">
+            <div class="section-header">
+                <h2>📖 Framework Concepts &amp; Research Foundations</h2>
+                <p>Understanding why static analysis alone and dynamic testing alone fail, and how the hybrid AI architecture succeeds</p>
+            </div>
+
+            <!-- 3-Way Paradigm Comparison -->
+            <div class="concepts-grid-3">
+                <div class="concept-card static">
+                    <div class="concept-card-icon">🔍</div>
+                    <h3>1. Static Analysis Alone</h3>
+                    <p>
+                        Inspects code syntax, AST, and structural attributes without running the code.
+                        Tools: SonarQube, ESLint, McCabe.
+                    </p>
+                    <div class="concept-pro-con">
+                        <div class="pro">✔ Fast, evaluates 100% of codebase without test suites</div>
+                        <div class="con">✖ <strong>Blind to runtime failures:</strong> Concurrency race conditions, null dereferences, and environmental bugs cannot be observed statically.</div>
+                    </div>
+                </div>
+
+                <div class="concept-card dynamic">
+                    <div class="concept-card-icon">🧪</div>
+                    <h3>2. Dynamic Testing Alone</h3>
+                    <p>
+                        Monitors runtime test suites, code coverage, test execution times, and mutation kill rates.
+                        Tools: JaCoCo, Jest, Stryker.
+                    </p>
+                    <div class="concept-pro-con">
+                        <div class="pro">✔ Validates runtime behavior and functional correctness</div>
+                        <div class="con">✖ <strong>False sense of safety:</strong> High statement coverage with weak assertions or happy-path tests hides deep architectural rot.</div>
+                    </div>
+                </div>
+
+                <div class="concept-card hybrid">
+                    <div class="concept-card-icon">⚡</div>
+                    <h3>3. The Hybrid AI Framework (Proposed)</h3>
+                    <p>
+                        Combines a Neural Network (structural representation) and Gradient Boosting (runtime thresholds) with cross-feature interaction terms.
+                    </p>
+                    <div class="concept-pro-con">
+                        <div class="pro">✔ <strong>93.6% accuracy</strong> vs 81.2% (best single model)</div>
+                        <div class="pro">✔ Captures dangerous combos: High Complexity × Low Branch Coverage</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mathematical Formulation Card -->
+            <div class="card" style="margin-bottom: 24px;">
+                <h3>📐 Mathematical Formulation of the Hybrid Model</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px;">
+                    <div>
+                        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">
+                            Traditional ensembles average predictions uniformly. In contrast, our hybrid framework incorporates
+                            an <strong>attention weighting vector</strong> and <strong>second-order interaction terms</strong>:
+                        </p>
+                        <div class="inspector-formula-box" style="margin-top: 10px;">
+                            P_defect = α · P_NN(X_static) + β · P_GBM(X_dynamic) + Σ γ_k (S_i ⊗ D_j)<br><br>
+                            Where α = 0.42, β = 0.58 (Learned Attention Weights)
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 13px; color: var(--accent-cyan); margin-bottom: 8px;">Key Interaction Hypotheses:</h4>
+                        <ul style="font-size: 12px; color: var(--text-secondary); line-height: 1.8; list-style: none;">
+                            <li>• <strong>Complexity × (1 - Branch Coverage):</strong> Complex branches without test coverage trigger exponential defect probability.</li>
+                            <li>• <strong>Code Smells × (1 - Test Pass Rate):</strong> Technical debt combined with failing suites signals architectural fragility.</li>
+                            <li>• <strong>Coupling × (1 - Mutation Score):</strong> High coupling with weak test assertions causes regression ripple effects.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Metric Knowledge Base -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <h3>📚 Metric Knowledge Base (19 Core Metrics)</h3>
+                        <p style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+                            Click a filter chip to view the definitions, healthy ranges, and extraction tools
+                        </p>
+                    </div>
+                    <div class="glossary-filter-bar">
+                        <button class="glossary-chip active" onclick="app.filterGlossary('all', this)">All (19)</button>
+                        <button class="glossary-chip" onclick="app.filterGlossary('static', this)">Static (10)</button>
+                        <button class="glossary-chip" onclick="app.filterGlossary('dynamic', this)">Dynamic (9)</button>
+                        <button class="glossary-chip" onclick="app.filterGlossary('Complexity', this)">Complexity</button>
+                        <button class="glossary-chip" onclick="app.filterGlossary('Coverage', this)">Coverage</button>
+                        <button class="glossary-chip" onclick="app.filterGlossary('Reliability', this)">Reliability</button>
+                    </div>
+                </div>
+
+                <div class="glossary-grid" id="glossaryGrid"></div>
+            </div>
+        </div>
+
+        <!-- ============ ANALYSIS SECTION ============ -->
+        <div class="section" id="analysis">
+            <div class="section-header">
+                <h2>🔬 Interactive Quality Analysis &amp; Scenario Simulator</h2>
+                <p>Test real-world software archetypes or customize 19 parameters with live feedback</p>
+            </div>
+
+            <!-- SCENARIO ARCHETYPES (Instant comprehension) -->
+            <div class="scenario-presets-wrapper">
+                <div class="scenario-presets-header">
+                    <h3>
+                        <span>⚡</span>
+                        Click to Test Relatable Software Scenarios
+                    </h3>
+                    <span style="font-size: 12px; color: var(--text-muted);">Demonstrates how the hybrid AI distinguishes what individual models miss</span>
+                </div>
+                <div class="scenario-presets-grid" id="scenarioPresetsGrid"></div>
+            </div>
+
+            <!-- Sample Projects Quick Bar -->
+            <div style="margin-bottom: 24px;">
+                <h4 style="font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 10px;">Or Select a Pre-Built Project Suite:</h4>
+                <div class="sample-projects-grid" id="sampleProjects"></div>
+            </div>
+
+            <!-- Custom Metrics Form -->
+            <div class="card" style="margin-top: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <h3>Custom Software Metric Analysis</h3>
+                        <p style="color: var(--text-secondary); font-size: 13px;">
+                            Adjust sliders to model any software module. Sliders feature live health badges and tooltips.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button type="button" class="btn btn-secondary" id="btnRandomFill">
+                            🎲 Random Realistic Sample
+                        </button>
+                        <button type="button" class="btn btn-primary" id="btnPredict">
+                            🔮 Predict Quality Score
+                        </button>
+                    </div>
+                </div>
+
+                <form id="customMetricsForm" onsubmit="return false;">
+                    <div class="metrics-form-container">
+                        <div class="metrics-column">
+                            <h3>
+                                <span class="icon static-icon">🔍</span>
+                                Static Code Metrics (10 Features)
+                            </h3>
+                            <div id="staticInputs"></div>
+                        </div>
+                        <div class="metrics-column">
+                            <h3>
+                                <span class="icon dynamic-icon">🧪</span>
+                                Dynamic Testing Telemetry (9 Features)
+                            </h3>
+                            <div id="dynamicInputs"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Prediction Results -->
+            <div id="predictionResults"></div>
+        </div>
+
+        <!-- ============ MODELS SECTION ============ -->
+        <div class="section" id="models">
+            <div class="section-header">
+                <h2>🧠 Machine Learning Model Evaluation</h2>
+                <p>Benchmark comparison showing the accuracy and robustness gains of the proposed Hybrid AI Framework</p>
+            </div>
+
+            <!-- Model Cards -->
+            <div class="model-cards-grid" id="modelCards"></div>
+
+            <!-- Comparison Charts -->
+            <div class="charts-grid-2">
+                <div class="card">
+                    <h4>Accuracy Benchmark (Baseline vs Proposed)</h4>
+                    <div class="chart-container">
+                        <canvas id="modelComparisonChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Multi-Metric Performance Breakdown</h4>
+                    <div class="chart-container">
+                        <canvas id="detailedComparisonChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <h4>Training &amp; Validation Convergence History (50 Epochs)</h4>
+                <div class="chart-container large">
+                    <canvas id="trainingHistoryChart"></canvas>
+                </div>
+            </div>
+
+            <div class="charts-grid-2">
+                <div class="card">
+                    <h4>Static Feature Importance (Neural Network)</h4>
+                    <div class="chart-container large">
+                        <canvas id="staticImportanceChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Dynamic Feature Importance (Gradient Boosting)</h4>
+                    <div class="chart-container large">
+                        <canvas id="dynamicImportanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h4>Confusion Matrix — Hybrid Ensemble on Test Split</h4>
+                <div class="chart-container">
+                    <canvas id="confusionMatrixChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ DATASET SECTION ============ -->
+        <div class="section" id="dataset">
+            <div class="section-header">
+                <h2>📁 Research Training &amp; Validation Dataset</h2>
+                <p>50 software modules with complete 19-metric ground truth and model predictions</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <h4>Predicted vs Actual Quality Scores (Linear Fit R² = 0.94)</h4>
+                <div class="chart-container">
+                    <canvas id="datasetScatterChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <!-- Search & Filter Toolbar -->
+                <div class="dataset-toolbar">
+                    <input type="text" class="dataset-search-input" id="datasetSearch" placeholder="🔍 Search module by name (e.g. AuthService)..." oninput="app.filterDataset()">
+                    <div class="dataset-filters">
+                        <select class="dataset-select" id="riskFilter" onchange="app.filterDataset()">
+                            <option value="ALL">All Risk Levels</option>
+                            <option value="Low">Low Risk</option>
+                            <option value="Medium">Medium Risk</option>
+                            <option value="High">High Risk</option>
+                            <option value="Critical">Critical Risk</option>
+                        </select>
+                        <select class="dataset-select" id="sortBy" onchange="app.filterDataset()">
+                            <option value="id">Sort by ID</option>
+                            <option value="qualityDesc">Quality Score (High → Low)</option>
+                            <option value="qualityAsc">Quality Score (Low → High)</option>
+                            <option value="complexity">Highest Complexity</option>
+                            <option value="coverage">Lowest Coverage</option>
+                        </select>
+                        <span id="datasetCountBadge" style="font-size: 12px; color: var(--text-muted); font-family: var(--font-mono);">50 modules</span>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table id="datasetTable"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ RESULTS SECTION ============ -->
+        <div class="section" id="results">
+            <div class="section-header">
+                <h2>📈 Experimental Results &amp; Academic Findings</h2>
+                <p>Quantitative verification of the hybrid framework's efficacy for software quality prediction</p>
+            </div>
+
+            <!-- Project results panel (shown when a sample project is loaded) -->
+            <div id="projectResultsPanel" class="card"></div>
+
+            <!-- Summary Stats -->
+            <div class="summary-stats-grid" id="summaryStats"></div>
+
+            <div class="charts-grid-2">
+                <div class="card">
+                    <h4>Predicted vs Actual Quality Regression Scatter</h4>
+                    <div class="chart-container large">
+                        <canvas id="resultsScatterChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4>Quality Score Frequency Distribution</h4>
+                    <div class="chart-container large">
+                        <canvas id="resultsDistributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Findings -->
+            <div class="card" style="margin-top: 20px;">
+                <h3>📝 Key Research Findings &amp; Takeaways</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px;">
+                    <div>
+                        <h4 style="color: var(--accent-cyan); font-size: 14px; margin-bottom: 12px;">The Hybrid Advantage</h4>
+                        <ul style="list-style: none; font-size: 13px; color: var(--text-secondary); line-height: 2;">
+                            <li>✅ <strong>93.6% accuracy:</strong> Outperforms static-only neural network (78.4%) and dynamic-only gradient boosting (81.2%).</li>
+                            <li>✅ <strong>Cross-Feature Synergy:</strong> High complexity without branch coverage amplifies defect probability by +23%.</li>
+                            <li>✅ <strong>Attention Weight Allocation:</strong> Dynamic metrics receive 58% weight, demonstrating the primacy of runtime verification.</li>
+                            <li>✅ <strong>Low Mean Squared Error:</strong> Achieves MSE of 0.031 compared to 0.098 for standard Random Forest.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-purple); font-size: 14px; margin-bottom: 12px;">Practical STQA Impact</h4>
+                        <ul style="list-style: none; font-size: 13px; color: var(--text-secondary); line-height: 2;">
+                            <li>🔬 <strong>Early CI/CD Quality Gates:</strong> Blocks deployments before risky code reaches staging environments.</li>
+                            <li>🔬 <strong>Eliminates Superficial Coverage:</strong> Mutation scores prevent false confidence from empty assertion tests.</li>
+                            <li>🔬 <strong>Actionable Remediation:</strong> Directly informs engineers which exact refactoring or tests will lower risk.</li>
+                            <li>🔬 <strong>Automated Reporting:</strong> Produces instantaneous executive audits for compliance and quality governance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ EXECUTIVE AUDIT REPORT MODAL ============ -->
+    <div id="auditReportModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h3 style="font-size: 20px; font-weight: 800; color: #fff;">📋 Executive Software Quality Audit Report</h3>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Hybrid AI Framework for Software Quality Prediction · Generated Live</p>
+                </div>
+                <button class="modal-close-btn" onclick="app.closeAuditModal()">✕</button>
+            </div>
+            <div id="auditReportBody"></div>
+            <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-glass);">
+                <button class="btn btn-secondary" onclick="app.copyAuditReportMarkdown()">
+                    📋 Copy as Markdown
+                </button>
+                <button class="btn btn-primary" onclick="window.print()">
+                    🖨️ Print / Save as PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <p>
+            <strong>Hybrid AI Framework for Software Quality Prediction</strong><br>
+            Using Static Analysis and Dynamic Testing Metrics<br>
+            <span style="color: var(--accent-cyan);">STQA Innovative Research Assignment</span> · 2026 · Pair Programming AI
+        </p>
+    </footer>
+
+    <!-- Scripts (load order matters) -->
+    <script src="js/data.js"></script>
+    <script src="js/ml-engine.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

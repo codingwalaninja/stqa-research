@@ -1,0 +1,10 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary IDE / scratch files
+scratch/
+test_output.pdf
+.vscode/
+.idea/
