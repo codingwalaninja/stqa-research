@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Hybrid AI Framework for Software Quality Prediction Using Static Analysis and Dynamic Testing Metrics</title>
-    <meta name="description" content="Research Term Paper: A Hybrid AI Framework for Software Quality Prediction Using Static Analysis and Dynamic Testing Metrics">
+    <title>A Hybrid AI Framework for Software Quality Prediction Using Static Code Analysis and Dynamic Testing Metrics</title>
+    <meta name="description" content="Research Term Paper: A Hybrid AI Framework for Software Quality Prediction Using Static Code Analysis and Dynamic Testing Metrics">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -411,7 +411,7 @@
     <div class="toolbar" id="toolbar">
         <div class="toolbar-title">
             <i class="fa-solid fa-graduation-cap"></i>
-            <span>STQA Research Term Paper · 2026</span>
+            <span>STQA Research Term Paper · Session 2026–2027</span>
         </div>
         <div class="toolbar-actions">
             <a href="index.html" class="btn btn-secondary">
@@ -430,19 +430,23 @@
     <main class="paper-page">
         <!-- Journal Header -->
         <div class="journal-meta">
-            Academic Research Term Paper · Software Testing and Quality Assurance (STQA) · Session 2025–2026
+            Academic Research Term Paper · Software Testing and Quality Assurance (STQA) · Session 2026–2027
         </div>
 
         <!-- Paper Title -->
         <h1 class="paper-title">
-            A Hybrid AI Framework for Software Quality Prediction Using Static Analysis and Dynamic Testing Metrics
+            A Hybrid AI Framework for Software Quality Prediction<br>Using Static Code Analysis and Dynamic Testing Metrics
         </h1>
 
         <!-- Author Information -->
         <div class="author-block">
-            <div class="author-names">Software Testing &amp; Artificial Intelligence Research Group</div>
-            <div class="author-affil">Department of Computer Science &amp; Engineering · Advanced Software Quality Assurance Laboratory</div>
-            <div class="author-course">Course: Software Testing &amp; Quality Assurance (STQA) · Innovative Research Assignment</div>
+            <div class="author-names" style="font-size: 16px; font-weight: 700; color: #0f172a;">Ankit Makwana</div>
+            <div class="author-affil" style="font-size: 13.5px; line-height: 1.5; color: #475569; margin-top: 4px;">
+                Department of Computer Science and Engineering<br>
+                Institute of Technology, Nirma University<br>
+                Ahmedabad, Gujarat, India<br>
+                <a href="mailto:23bce162@nirmauni.ac.in" style="color: #0284c7; text-decoration: none;">23bce162@nirmauni.ac.in</a>
+            </div>
         </div>
 
         <!-- Abstract Box -->
@@ -901,67 +905,61 @@
                             <th>Static NN (<em>P</em><sub>static</sub>)</th>
                             <th>Dynamic GBM (<em>P</em><sub>dynamic</sub>)</th>
                             <th>Synergy (&sum;<em>w<sub>k</sub></em>&Omega;<sub><em>k</em></sub>)</th>
-                            <th>Defect Prob (<em>P</em><sub>defect</sub>)</th>
+                            <th>Defect Probability (<em>P</em><sub>defect</sub>)</th>
                             <th>Quality Score</th>
                             <th>Risk Tier</th>
-                            <th>Remediation Directive</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="highlight-row" style="background: #fef2f2;">
                             <td><strong>1. All-Critical Toxic Module</strong></td>
-                            <td>CC=80, BC=5%, MI=0, MTBF=1h</td>
+                            <td>CC = 80<br>BC = 5%<br>MI = 0<br>MTBF = 1 h</td>
                             <td>0.750</td>
                             <td>0.812</td>
                             <td>+0.372</td>
-                            <td><strong>0.990</strong></td>
-                            <td><strong style="color: #dc2626;">1 / 100</strong></td>
+                            <td>0.990</td>
+                            <td>1 / 100</td>
                             <td><span class="badge-tag" style="background:#fee2e2; color:#b91c1c;">Critical</span></td>
-                            <td>Immediate CI block; full architectural refactor &amp; branch test baseline</td>
                         </tr>
                         <tr>
                             <td><strong>2. Superficial Coverage Trap</strong></td>
-                            <td>SC=94%, BC=32%, MS=22%</td>
+                            <td>SC = 94%<br>BC = 32%<br>MS = 22%</td>
                             <td>0.482</td>
                             <td>0.240</td>
                             <td>+0.222</td>
-                            <td><strong>0.564</strong></td>
-                            <td><strong style="color: #d97706;">44 / 100</strong></td>
+                            <td>0.564</td>
+                            <td>44 / 100</td>
                             <td><span class="badge-tag" style="background:#fef3c7; color:#b45309;">High</span></td>
-                            <td>Unmasks false safety; add negative branch assertions &amp; mutation tests</td>
                         </tr>
                         <tr>
                             <td><strong>3. Legacy Spaghetti Monolith</strong></td>
-                            <td>LOC=4.2k, CC=58, CBO=31</td>
+                            <td>LOC = 4.2k<br>CC = 58<br>CBO = 31</td>
                             <td>0.710</td>
                             <td>0.680</td>
                             <td>+0.128</td>
-                            <td><strong>0.821</strong></td>
-                            <td><strong style="color: #dc2626;">18 / 100</strong></td>
+                            <td>0.821</td>
+                            <td>18 / 100</td>
                             <td><span class="badge-tag" style="background:#fee2e2; color:#b91c1c;">Critical</span></td>
-                            <td>Decompose monolithic God classes; decouple high CBO modules</td>
                         </tr>
                         <tr>
                             <td><strong>4. Flaky Pipeline Disaster</strong></td>
-                            <td>FTR=26%, MTBF=35h, CC=8</td>
+                            <td>FTR = 26%<br>MTBF = 35 h<br>CC = 8</td>
                             <td>0.180</td>
                             <td>0.520</td>
                             <td>+0.064</td>
-                            <td><strong>0.442</strong></td>
-                            <td><strong style="color: #d97706;">56 / 100</strong></td>
+                            <td>0.442</td>
+                            <td>56 / 100</td>
                             <td><span class="badge-tag" style="background:#fef3c7; color:#b45309;">High</span></td>
-                            <td>Isolate non-deterministic async tests; eliminate concurrency race conditions</td>
                         </tr>
                         <tr style="background: #f0fdf4;">
                             <td><strong>5. Clean Microservice</strong></td>
-                            <td>CC=4, BC=91%, MS=89%, MI=88</td>
+                            <td>CC = 4<br>BC = 91%<br>MS = 89%<br>MI = 88</td>
                             <td>0.105</td>
                             <td>0.082</td>
                             <td>&minus;0.057</td>
-                            <td><strong>0.069</strong></td>
-                            <td><strong style="color: #059669;">93 / 100</strong></td>
+                            <td>0.069</td>
+                            <td>93 / 100</td>
                             <td><span class="badge-tag" style="background:#dcfce7; color:#15803d;">Low</span></td>
-                            <td>Production approved; maintain high-assertion regression test suites</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1017,12 +1015,13 @@
 
     <script>
         function copyBibtex() {
-            const bibtex = `@article{hybrid_ai_stqa_2026,
-  title={A Hybrid AI Framework for Software Quality Prediction Using Static Analysis and Dynamic Testing Metrics},
-  author={STQA Research Group},
-  journal={Software Testing and Quality Assurance Term Research},
+            const bibtex = `@article{makwana2026hybrid,
+  title={A Hybrid AI Framework for Software Quality Prediction Using Static Code Analysis and Dynamic Testing Metrics},
+  author={Makwana, Ankit},
+  journal={Academic Research Term Paper, Software Testing and Quality Assurance (STQA)},
+  institution={Department of Computer Science and Engineering, Institute of Technology, Nirma University},
   year={2026},
-  pages={1--14}
+  pages={1--11}
 }`;
             navigator.clipboard.writeText(bibtex).then(() => {
                 alert("BibTeX citation copied to clipboard!");

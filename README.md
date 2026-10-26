@@ -1,9 +1,10 @@
 # 🚀 A Hybrid AI Framework for Software Quality Prediction
-### Using Static Analysis and Dynamic Testing Metrics
+### Using Static Code Analysis and Dynamic Testing Metrics
 
-> **Course:** Software Testing & Quality Assurance (STQA)  
-> **Type:** Innovative Research Assignment & Interactive Demonstration Application  
-> **Status:** Production-Ready & Verified  
+> **Author:** Ankit Makwana (`23bce162@nirmauni.ac.in`)  
+> **Affiliation:** Department of Computer Science and Engineering, Institute of Technology, Nirma University  
+> **Course:** Software Testing & Quality Assurance (STQA) · Academic Session 2026–2027  
+> **Document Type:** Academic Research Term Paper & Demonstration Platform  
 
 ---
 
